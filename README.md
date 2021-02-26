@@ -1,6 +1,17 @@
 # Ecompleto
 
-**TODO: Add description**
+## Running
+
+```
+ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries.txt', 0)
+```
+
+** TODO 
+Achieve this under 2 seconds
+```
+ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries2.txt')
+```
+Currenly it takes around 10 seconds.
 
 ## Installation
 
