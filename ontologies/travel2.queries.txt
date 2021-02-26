@@ -1,0 +1,3 @@
+? (X,Y) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#City>(Y), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X,Y) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(Y), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X,Y) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(Y), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).

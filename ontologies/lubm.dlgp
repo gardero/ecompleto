@@ -1,0 +1,172 @@
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X3).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus>(X1, X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus>(X1, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(X1, X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X0, X1).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X0, X1) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(X1, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ClericalStaff>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse>(X0, X3), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse>(X3) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ClericalStaff>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director>(X0).
+ ! :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College>(X0), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program>(X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf>(X3, X0).
+<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X0) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(X3, X0).
+

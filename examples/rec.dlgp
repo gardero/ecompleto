@@ -1,0 +1,8 @@
+
+r(X,Y) :- r(X,Z), r(Z,Y).
+a(X) :- b(X).
+a(X) :- c(X).
+[disj] [b(X), c(X)] :- s(X).
+
+? :- a(X).
+? :- s(X), r(X,a).

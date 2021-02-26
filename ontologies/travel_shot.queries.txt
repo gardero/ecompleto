@@ -1,0 +1,7 @@
+? (X) :- -aNationalPark(X), -aRuralArea(X), aBackpackersDestination(X).
+? (X) :- -aRuralArea(X), -aUrbanArea(X), -aCapital(X), aDestination(X).
+? (X) :- -aCapital(X), -aCity(X), aRetireeDestination(X).
+? (X) :- aDestination(X), -aTown(X), -aCapital(X).
+? (X) :- aDestination(X), -aFarmland(X), -aBeach(X).
+? (X) :- aActivity(X), -Safari(X), -aYoga(X).
+? (X) :- aAccomodation(X), -aHotel(X), -aCampground(X).

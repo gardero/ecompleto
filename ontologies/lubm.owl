@@ -1,0 +1,801 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#"
+     xml:base="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:univ-bench="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliateOf">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#affiliatedOrganizationOf">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+        <owl:inverseOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#hasAlumnus">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#listedCourse">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf">
+        <owl:inverseOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#orgPublication">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationDate">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationResearch">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchProject">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareDocumentation">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#softwareVersion">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse"/>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf">
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#tenured">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#undergraduateDegreeFrom">
+        <rdfs:domain rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#degreeFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#age">
+        <rdfs:label>is age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#emailAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#emailAddress">
+        <rdfs:label>can be reached at</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#name">
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#officeNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#officeNumber">
+        <rdfs:label>office room No.</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#researchInterest -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#researchInterest">
+        <rdfs:label>is researching</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#telephone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#telephone">
+        <rdfs:label>telephone number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://swat.cse.lehigh.edu/onto/univ-bench.owl#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#title">
+        <rdfs:label>title</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Book">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ClericalStaff -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ClericalStaff">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ConferencePaper">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Dean">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#College"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Director">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor"/>
+                        <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Employee"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateStudent">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse"/>
+                <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#GraduateCourse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Institute">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#JournalArticle">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Manual">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization">
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person">
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#PostDoc">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Program">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication">
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Research">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchAssistant">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Schedule">
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Software">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Specification">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+        <owl:disjointWith rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse"/>
+                        <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#SystemsStaff">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AdministrativeStaff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TeachingAssistant">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teachingAssistantOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Article"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UndergraduateStudent">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#University">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#UnofficialPublication">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#VisitingProfessor">
+        <rdfs:subClassOf rdf:resource="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work -->
+
+    <owl:Class rdf:about="http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.1602) http://owlapi.sourceforge.net -->
+

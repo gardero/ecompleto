@@ -1,0 +1,5 @@
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Organization>(X), -<http://www.owl-ontologies.com/travel.owl#headOf>(Y,X), -<http://www.owl-ontologies.com/travel.owl#Department>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Person>(X), -<http://www.owl-ontologies.com/travel.owl#Faculty>(X), -<http://www.owl-ontologies.com/travel.owl#headOf>(X,Y).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Person>(X), <http://www.owl-ontologies.com/travel.owl#Faculty>(X), <http://www.owl-ontologies.com/travel.owl#takesCourse>(X,Y).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Publication>(X), -<http://www.owl-ontologies.com/travel.owl#TechnicalReport>(X).
+? (Y) :- <http://www.owl-ontologies.com/travel.owl#Work>(Y), -<http://www.owl-ontologies.com/travel.owl#takesCourse>(X,Y).

@@ -1,0 +1,75 @@
+aAccommodation(X0) :- ahasRating(X0, X3).
+aActivity(X0) :- ahasContact(X0, X3).
+aDestination(X0) :- ahasActivity(X0, X3).
+aActivity(X0) :- aisOfferedAt(X0, X3).
+aDestination(X0) :- ahasAccommodation(X0, X3).
+aDestination(X0) :- ahasPart(X0, X3).
+aSightseeing(X0) :- aSafari(X0).
+aRuralArea(X0) :- aFarmland(X0).
+aRelaxation(X0) :- aYoga(X0).
+aActivity(X0) :- aRelaxation(X0).
+ahasRating(X0, aOneStarRating) :- aCampground(X0).
+aCity(X0) :- aCapital(X0).
+aSports(X0) :- aHiking(X0).
+aHotel(X0) :- aLuxuryHotel(X0).
+aActivity(X0) :- aSightseeing(X0).
+aAdventure(X0) :- aSafari(X0).
+aSightseeing(X0) :- aMuseums(X0).
+aActivity(X0) :- aAdventure(X0).
+aUrbanArea(X0) :- aCity(X0).
+aDestination(X0) :- aUrbanArea(X0).
+aUrbanArea(X0) :- aTown(X0).
+aRuralArea(X0) :- aNationalPark(X0).
+aRelaxation(X0) :- aSunbathing(X0).
+ahasRating(X0, aThreeStarRating) :- aLuxuryHotel(X0).
+ahasAccommodation(X0, X3), aCampground(X3) :- aNationalPark(X0).
+aActivity(X0) :- aSports(X0).
+aAccommodation(X0) :- aHotel(X0).
+aAccommodation(X0) :- aCampground(X0).
+aAccommodation(X0) :- aBedAndBreakfast(X0).
+ahasActivity(X0, X3), aHiking(X3) :- aNationalPark(X0).
+aSports(X0) :- aSurfing(X0).
+aAdventure(X0) :- aBunjeeJumping(X0).
+ahasAccommodation(X0, X3), aLuxuryHotel(X3) :- aCity(X0).
+ahasActivity(X0, X3), aMuseums(X3) :- aCapital(X0).
+aDestination(X0) :- aBeach(X0).
+aDestination(X0) :- aRuralArea(X0).
+aDestination(X0) :- aQuietDestination(X0).
+ ! :- aFamilyDestination(X0), aQuietDestination(X0).
+aDestination(X0) :- aBudgetHotelDestination(X0).
+ahasAccommodation(X0, X3), aBudgetAccommodation(X3), aHotel(X3) :- aBudgetHotelDestination(X0).
+aBudgetHotelDestination(X0) :- aHotel(X3), ahasAccommodation(X0, X3), aBudgetAccommodation(X3), aDestination(X0).
+aBudgetAccommodation(X0) :- aAccommodation(X0), ahasRating(X0, aOneStarRating).
+aBudgetAccommodation(X0) :- aAccommodation(X0), ahasRating(X0, aTwoStarRating).
+aDestination(X0) :- aFamilyDestination(X0).
+ahasAccommodation(X0, X3) :- aFamilyDestination(X0).
+aBackpackersDestination(X0) :- ahasAccommodation(X0, X3), aBudgetAccommodation(X3), aAdventure(X4), ahasActivity(X0, X4), aDestination(X0).
+aBackpackersDestination(X0) :- ahasAccommodation(X0, X3), aBudgetAccommodation(X3), ahasActivity(X0, X4), aSports(X4), aDestination(X0).
+aDestination(X0) :- aRetireeDestination(X0).
+ahasAccommodation(X0, X3), ahasRating(X3, aThreeStarRating) :- aRetireeDestination(X0).
+ahasActivity(X0, X3), aSightseeing(X3) :- aRetireeDestination(X0).
+aRetireeDestination(X0) :- ahasAccommodation(X0, X3), ahasActivity(X0, X4), aSightseeing(X4), ahasRating(X3, aThreeStarRating), aDestination(X0).
+ ! :- aSightseeing(X0), aRelaxation(X0).
+ ! :- aBedAndBreakfast(X0), aCampground(X0).
+ ! :- aUrbanArea(X0), aRuralArea(X0).
+ ! :- aAdventure(X0), aSightseeing(X0).
+ ! :- aSports(X0), aRelaxation(X0).
+ ! :- aAdventure(X0), aSports(X0).
+ ! :- aSports(X0), aSightseeing(X0).
+ ! :- aAdventure(X0), aRelaxation(X0).
+ ! :- aHotel(X0), aBedAndBreakfast(X0).
+ ! :- aHotel(X0), aCampground(X0).
+aActivity(X0) :- ahasActivity(X3, X0).
+aAccommodation(X0) :- ahasAccommodation(X3, X0).
+aAccommodationRating(X0) :- ahasRating(X3, X0).
+aDestination(X0) :- ahasPart(X3, X0).
+aContact(X0) :- ahasContact(X3, X0).
+aDestination(X0) :- aisOfferedAt(X3, X0).
+ahasPart(X0, X2) :- ahasPart(X0, X1), ahasPart(X1, X2).
+aisOfferedAt(X1, X0) :- ahasActivity(X0, X1).
+ahasActivity(X0, X1) :- aisOfferedAt(X1, X0).
+aContact(X0) :- ahasStreet(X0, X3).
+aContact(X0) :- ahasEMail(X0, X3).
+aContact(X0) :- ahasCity(X0, X3).
+aContact(X0) :- ahasZipCode(X0, X3).
+

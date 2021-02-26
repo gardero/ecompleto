@@ -1,0 +1,693 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.owl-ontologies.com/travel.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.owl-ontologies.com/travel.owl">
+    <Prefix name="" IRI="http://www.owl-ontologies.com/travel.owl#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="daml" IRI="http://www.daml.org/2001/03/daml+oil#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">An example ontology for tutorial purposes.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">1.0 by Holger Knublauch (holger@smi.stanford.edu)</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Sunbathing"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasZipCode"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPart"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#QuietDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Activity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isOfferedAt"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LuxuryHotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BudgetHotelDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BackpackersDestination"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEMail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Museums"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BudgetAccommodation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Contact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Yoga"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UrbanArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hiking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Farmland"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAccommodation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Relaxation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capital"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccommodationRating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Town"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Safari"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RetireeDestination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sports"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FamilyDestination"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hotel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RuralArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Surfing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Accommodation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasContact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Destination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Beach"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Adventure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStreet"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BunjeeJumping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BedAndBreakfast"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sightseeing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasActivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NationalPark"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasRating"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Campground"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OneStarRating"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Sydney"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#FourSeasons"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Canberra"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#TwoStarRating"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Woomera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Warrumbungles"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CurrawongBeach"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BlueMountains"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ThreeStarRating"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cairns"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Coonabarabran"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#BondiBeach"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#CapeYork"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#AccommodationRating"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#OneStarRating"/>
+            <NamedIndividual IRI="#TwoStarRating"/>
+            <NamedIndividual IRI="#ThreeStarRating"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BackpackersDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Destination"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAccommodation"/>
+                <Class IRI="#BudgetAccommodation"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasActivity"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Adventure"/>
+                    <Class IRI="#Sports"/>
+                </ObjectUnionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BudgetAccommodation"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Accommodation"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasRating"/>
+                <ObjectOneOf>
+                    <NamedIndividual IRI="#OneStarRating"/>
+                    <NamedIndividual IRI="#TwoStarRating"/>
+                </ObjectOneOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#BudgetHotelDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Destination"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAccommodation"/>
+                <ObjectIntersectionOf>
+                    <Class IRI="#BudgetAccommodation"/>
+                    <Class IRI="#Hotel"/>
+                </ObjectIntersectionOf>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#FamilyDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Destination"/>
+            <ObjectMinCardinality cardinality="1">
+                <ObjectProperty IRI="#hasAccommodation"/>
+            </ObjectMinCardinality>
+            <ObjectMinCardinality cardinality="2">
+                <ObjectProperty IRI="#hasActivity"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#QuietDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Destination"/>
+            <ObjectComplementOf>
+                <Class IRI="#FamilyDestination"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#RetireeDestination"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Destination"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasAccommodation"/>
+                <ObjectHasValue>
+                    <ObjectProperty IRI="#hasRating"/>
+                    <NamedIndividual IRI="#ThreeStarRating"/>
+                </ObjectHasValue>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#hasActivity"/>
+                <Class IRI="#Sightseeing"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Adventure"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Beach"/>
+        <Class IRI="#Destination"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BedAndBreakfast"/>
+        <Class IRI="#Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BunjeeJumping"/>
+        <Class IRI="#Adventure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Campground"/>
+        <Class IRI="#Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Campground"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasRating"/>
+            <NamedIndividual IRI="#OneStarRating"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capital"/>
+        <Class IRI="#City"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capital"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasActivity"/>
+            <Class IRI="#Museums"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="#UrbanArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAccommodation"/>
+            <Class IRI="#LuxuryHotel"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Farmland"/>
+        <Class IRI="#RuralArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hiking"/>
+        <Class IRI="#Sports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hotel"/>
+        <Class IRI="#Accommodation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LuxuryHotel"/>
+        <Class IRI="#Hotel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LuxuryHotel"/>
+        <ObjectHasValue>
+            <ObjectProperty IRI="#hasRating"/>
+            <NamedIndividual IRI="#ThreeStarRating"/>
+        </ObjectHasValue>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Museums"/>
+        <Class IRI="#Sightseeing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NationalPark"/>
+        <Class IRI="#RuralArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NationalPark"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasAccommodation"/>
+            <Class IRI="#Campground"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NationalPark"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#hasActivity"/>
+            <Class IRI="#Hiking"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Relaxation"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RuralArea"/>
+        <Class IRI="#Destination"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Safari"/>
+        <Class IRI="#Adventure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Safari"/>
+        <Class IRI="#Sightseeing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sightseeing"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sports"/>
+        <Class IRI="#Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sunbathing"/>
+        <Class IRI="#Relaxation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Surfing"/>
+        <Class IRI="#Sports"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Town"/>
+        <Class IRI="#UrbanArea"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UrbanArea"/>
+        <Class IRI="#Destination"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Yoga"/>
+        <Class IRI="#Relaxation"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Adventure"/>
+        <Class IRI="#Relaxation"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Adventure"/>
+        <Class IRI="#Sightseeing"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Adventure"/>
+        <Class IRI="#Sports"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BedAndBreakfast"/>
+        <Class IRI="#Campground"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#BedAndBreakfast"/>
+        <Class IRI="#Hotel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Campground"/>
+        <Class IRI="#Hotel"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Relaxation"/>
+        <Class IRI="#Sightseeing"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Relaxation"/>
+        <Class IRI="#Sports"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#RuralArea"/>
+        <Class IRI="#UrbanArea"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Sightseeing"/>
+        <Class IRI="#Sports"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#NationalPark"/>
+        <NamedIndividual IRI="#BlueMountains"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Beach"/>
+        <NamedIndividual IRI="#BondiBeach"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#City"/>
+        <NamedIndividual IRI="#Cairns"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Capital"/>
+        <NamedIndividual IRI="#Canberra"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RuralArea"/>
+        <NamedIndividual IRI="#CapeYork"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Town"/>
+        <NamedIndividual IRI="#Coonabarabran"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Beach"/>
+        <NamedIndividual IRI="#CurrawongBeach"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#LuxuryHotel"/>
+        <NamedIndividual IRI="#FourSeasons"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AccommodationRating"/>
+        <NamedIndividual IRI="#OneStarRating"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Capital"/>
+        <NamedIndividual IRI="#Sydney"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AccommodationRating"/>
+        <NamedIndividual IRI="#ThreeStarRating"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#AccommodationRating"/>
+        <NamedIndividual IRI="#TwoStarRating"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#NationalPark"/>
+        <NamedIndividual IRI="#Warrumbungles"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RuralArea"/>
+        <NamedIndividual IRI="#Woomera"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#OneStarRating"/>
+        <NamedIndividual IRI="#ThreeStarRating"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#OneStarRating"/>
+        <NamedIndividual IRI="#TwoStarRating"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#ThreeStarRating"/>
+        <NamedIndividual IRI="#TwoStarRating"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasAccommodation"/>
+        <NamedIndividual IRI="#Sydney"/>
+        <NamedIndividual IRI="#FourSeasons"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPart"/>
+        <NamedIndividual IRI="#Sydney"/>
+        <NamedIndividual IRI="#BondiBeach"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPart"/>
+        <NamedIndividual IRI="#Sydney"/>
+        <NamedIndividual IRI="#CurrawongBeach"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasActivity"/>
+        <ObjectProperty IRI="#isOfferedAt"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#hasPart"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAccommodation"/>
+        <Class IRI="#Destination"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasActivity"/>
+        <Class IRI="#Destination"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasContact"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Destination"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="#Accommodation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isOfferedAt"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAccommodation"/>
+        <Class IRI="#Accommodation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasActivity"/>
+        <Class IRI="#Activity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasContact"/>
+        <Class IRI="#Contact"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPart"/>
+        <Class IRI="#Destination"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasRating"/>
+        <Class IRI="#AccommodationRating"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isOfferedAt"/>
+        <Class IRI="#Destination"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasCity"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasEMail"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasStreet"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#hasZipCode"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasCity"/>
+        <Class IRI="#Contact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEMail"/>
+        <Class IRI="#Contact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasStreet"/>
+        <Class IRI="#Contact"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasZipCode"/>
+        <Class IRI="#Contact"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasCity"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEMail"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStreet"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasZipCode"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Accommodation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A place to stay for tourists.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AccommodationRating</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Consists of exactly three individuals.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BackpackersDestination</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A destination that provides budget accommodation and offers sport or adventure activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BudgetAccommodation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Accommodation that has either one or two star rating.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BudgetHotelDestination</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A destination with a hotel that is also a budget accommodation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FamilyDestination</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A destination with at least one accommodation and at least 2 activities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#QuietDestination</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A destination that is not frequented by noisy families.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RetireeDestination</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A destination with at least one three star accommodation and sightseeing opportunities.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

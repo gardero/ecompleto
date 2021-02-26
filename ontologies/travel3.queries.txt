@@ -1,0 +1,500 @@
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Beach>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RuralArea>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RuralArea>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#Town>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#UrbanArea>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), <http://www.owl-ontologies.com/travel.owl#City>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#Town>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Town>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Town>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Town>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), -<http://www.owl-ontologies.com/travel.owl#Destination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), -<http://www.owl-ontologies.com/travel.owl#Destination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#Destination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), -<http://www.owl-ontologies.com/travel.owl#Destination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), -<http://www.owl-ontologies.com/travel.owl#Destination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasRating>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#NationalPark>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(Z, X), <http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Beach>(X), -<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#City>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#City>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#City>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#City>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasPart>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Y, X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasRating>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(X, Z), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#City>(X), -<http://www.owl-ontologies.com/travel.owl#hasRating>(Z, X), <http://www.owl-ontologies.com/travel.owl#hasPart>(X, Y).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#Accommodation>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Accommodation>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X), <http://www.owl-ontologies.com/travel.owl#Hotel>(X).

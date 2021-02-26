@@ -1,0 +1,8 @@
+? (X) :- <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#RuralArea>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#RuralArea>(X), -<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X), <http://www.owl-ontologies.com/travel.owl#Destination>(X).
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#Capital>(X), -<http://www.owl-ontologies.com/travel.owl#City>(X), <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#Town>(X), -<http://www.owl-ontologies.com/travel.owl#Capital>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Destination>(X), -<http://www.owl-ontologies.com/travel.owl#Farmland>(X), -<http://www.owl-ontologies.com/travel.owl#Beach>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Activity>(X), -<http://www.owl-ontologies.com/travel.owl#Safari>(X), -<http://www.owl-ontologies.com/travel.owl#Yoga>(X).
+? (X) :- <http://www.owl-ontologies.com/travel.owl#Accomodation>(X), -<http://www.owl-ontologies.com/travel.owl#Hotel>(X), -<http://www.owl-ontologies.com/travel.owl#Campground>(X).

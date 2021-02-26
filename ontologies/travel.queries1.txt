@@ -1,0 +1,1 @@
+? (X) :- -<http://www.owl-ontologies.com/travel.owl#NationalPark>(X), -<http://www.owl-ontologies.com/travel.owl#RuralArea>(X), <http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X).

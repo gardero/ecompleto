@@ -1,0 +1,9 @@
+%{
+  "decimal": {:hex, :decimal, "1.9.0", "83e8daf59631d632b171faabafb4a9f4242c514b0a06ba3df493951c08f64d07", [:mix], [], "hexpm", "b1f2343568eed6928f3e751cf2dffde95bfaa19dd95d09e8a9ea92ccfd6f7d85"},
+  "dep_from_git": {:git, "https://github.com/rdf-elixir/rdf-ex.git", "550388b6ca28ae0baefacf9929f8988afdef679c", [tag: "v0.9.2"]},
+  "exprintf": {:hex, :exprintf, "0.2.1", "b7e895dfb00520cfb7fc1671303b63b37dc3897c59be7cbf1ae62f766a8a0314", [:mix], [], "hexpm", "20a0e8c880be90e56a77fcc82533c5d60c643915c7ce0cc8aa1e06ed6001da28"},
+  "exprof": {:hex, :exprof, "0.2.4", "13ddc0575a6d24b52e7c6809d2a46e9ad63a4dd179628698cdbb6c1f6e497c98", [:mix], [{:exprintf, "~> 0.2", [hex: :exprintf, repo: "hexpm", optional: false]}], "hexpm", "0884bcb66afc421c75d749156acbb99034cc7db6d3b116c32e36f32551106957"},
+  "protocol_ex": {:hex, :protocol_ex, "0.4.3", "4acbe35da85109dc40315c1139bb7a65ebc7fc102d384cd8b3038384fbb9b282", [:mix], [], "hexpm", "6ca5ddb3505c9c86f17cd3f19838b34bf89966ae17078f79f81983b6a4391fe9"},
+  "rdf": {:git, "https://github.com/rdf-elixir/rdf-ex.git", "550388b6ca28ae0baefacf9929f8988afdef679c", [tag: "v0.9.2"]},
+  "rdf_ex": {:git, "https://github.com/rdf-elixir/rdf-ex.git", "550388b6ca28ae0baefacf9929f8988afdef679c", [tag: "v0.9.2"]},
+}

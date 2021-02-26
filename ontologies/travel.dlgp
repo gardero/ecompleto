@@ -1,0 +1,78 @@
+<http://www.owl-ontologies.com/travel.owl#Accommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasRating>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasContact>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#isOfferedAt>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasPart>(X0, X3).
+ ! :- <http://www.owl-ontologies.com/travel.owl#OneStarRating> = <http://www.owl-ontologies.com/travel.owl#ThreeStarRating>.
+ ! :- <http://www.owl-ontologies.com/travel.owl#OneStarRating> = <http://www.owl-ontologies.com/travel.owl#TwoStarRating>.
+ ! :- <http://www.owl-ontologies.com/travel.owl#ThreeStarRating> = <http://www.owl-ontologies.com/travel.owl#TwoStarRating>.
+<http://www.owl-ontologies.com/travel.owl#Sightseeing>(X0) :- <http://www.owl-ontologies.com/travel.owl#Safari>(X0).
+<http://www.owl-ontologies.com/travel.owl#RuralArea>(X0) :- <http://www.owl-ontologies.com/travel.owl#Farmland>(X0).
+<http://www.owl-ontologies.com/travel.owl#Relaxation>(X0) :- <http://www.owl-ontologies.com/travel.owl#Yoga>(X0).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#Relaxation>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasRating>(X0, <http://www.owl-ontologies.com/travel.owl#OneStarRating>) :- <http://www.owl-ontologies.com/travel.owl#Campground>(X0).
+<http://www.owl-ontologies.com/travel.owl#City>(X0) :- <http://www.owl-ontologies.com/travel.owl#Capital>(X0).
+<http://www.owl-ontologies.com/travel.owl#Sports>(X0) :- <http://www.owl-ontologies.com/travel.owl#Hiking>(X0).
+<http://www.owl-ontologies.com/travel.owl#Hotel>(X0) :- <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X0).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#Sightseeing>(X0).
+<http://www.owl-ontologies.com/travel.owl#Adventure>(X0) :- <http://www.owl-ontologies.com/travel.owl#Safari>(X0).
+<http://www.owl-ontologies.com/travel.owl#Sightseeing>(X0) :- <http://www.owl-ontologies.com/travel.owl#Museums>(X0).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#Adventure>(X0).
+<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X0) :- <http://www.owl-ontologies.com/travel.owl#City>(X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#UrbanArea>(X0).
+<http://www.owl-ontologies.com/travel.owl#UrbanArea>(X0) :- <http://www.owl-ontologies.com/travel.owl#Town>(X0).
+<http://www.owl-ontologies.com/travel.owl#RuralArea>(X0) :- <http://www.owl-ontologies.com/travel.owl#NationalPark>(X0).
+<http://www.owl-ontologies.com/travel.owl#Relaxation>(X0) :- <http://www.owl-ontologies.com/travel.owl#Sunbathing>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasRating>(X0, <http://www.owl-ontologies.com/travel.owl#ThreeStarRating>) :- <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#Campground>(X3) :- <http://www.owl-ontologies.com/travel.owl#NationalPark>(X0).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#Sports>(X0).
+<http://www.owl-ontologies.com/travel.owl#Accommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#Hotel>(X0).
+<http://www.owl-ontologies.com/travel.owl#Accommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#Campground>(X0).
+<http://www.owl-ontologies.com/travel.owl#Accommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#BedAndBreakfast>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X3), <http://www.owl-ontologies.com/travel.owl#Hiking>(X3) :- <http://www.owl-ontologies.com/travel.owl#NationalPark>(X0).
+<http://www.owl-ontologies.com/travel.owl#Sports>(X0) :- <http://www.owl-ontologies.com/travel.owl#Surfing>(X0).
+<http://www.owl-ontologies.com/travel.owl#Adventure>(X0) :- <http://www.owl-ontologies.com/travel.owl#BunjeeJumping>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#LuxuryHotel>(X3) :- <http://www.owl-ontologies.com/travel.owl#City>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X3), <http://www.owl-ontologies.com/travel.owl#Museums>(X3) :- <http://www.owl-ontologies.com/travel.owl#Capital>(X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#Beach>(X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#RuralArea>(X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#QuietDestination>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#FamilyDestination>(X0), <http://www.owl-ontologies.com/travel.owl#QuietDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#BudgetHotelDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#BudgetAccommodation>(X3), <http://www.owl-ontologies.com/travel.owl#Hotel>(X3) :- <http://www.owl-ontologies.com/travel.owl#BudgetHotelDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#BudgetHotelDestination>(X0) :- <http://www.owl-ontologies.com/travel.owl#Hotel>(X3), <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#BudgetAccommodation>(X3), <http://www.owl-ontologies.com/travel.owl#Destination>(X0).
+<http://www.owl-ontologies.com/travel.owl#BudgetAccommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#Accommodation>(X0), <http://www.owl-ontologies.com/travel.owl#hasRating>(X0, <http://www.owl-ontologies.com/travel.owl#OneStarRating>).
+<http://www.owl-ontologies.com/travel.owl#BudgetAccommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#Accommodation>(X0), <http://www.owl-ontologies.com/travel.owl#hasRating>(X0, <http://www.owl-ontologies.com/travel.owl#TwoStarRating>).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#FamilyDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3) :- <http://www.owl-ontologies.com/travel.owl#FamilyDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#BudgetAccommodation>(X3), <http://www.owl-ontologies.com/travel.owl#Adventure>(X4), <http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X4), <http://www.owl-ontologies.com/travel.owl#Destination>(X0).
+<http://www.owl-ontologies.com/travel.owl#BackpackersDestination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#BudgetAccommodation>(X3), <http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X4), <http://www.owl-ontologies.com/travel.owl#Sports>(X4), <http://www.owl-ontologies.com/travel.owl#Destination>(X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#hasRating>(X3, <http://www.owl-ontologies.com/travel.owl#ThreeStarRating>) :- <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X3), <http://www.owl-ontologies.com/travel.owl#Sightseeing>(X3) :- <http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X0).
+<http://www.owl-ontologies.com/travel.owl#RetireeDestination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X0, X3), <http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X4), <http://www.owl-ontologies.com/travel.owl#Sightseeing>(X4), <http://www.owl-ontologies.com/travel.owl#hasRating>(X3, <http://www.owl-ontologies.com/travel.owl#ThreeStarRating>), <http://www.owl-ontologies.com/travel.owl#Destination>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Sightseeing>(X0), <http://www.owl-ontologies.com/travel.owl#Relaxation>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#BedAndBreakfast>(X0), <http://www.owl-ontologies.com/travel.owl#Campground>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#UrbanArea>(X0), <http://www.owl-ontologies.com/travel.owl#RuralArea>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Adventure>(X0), <http://www.owl-ontologies.com/travel.owl#Sightseeing>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Sports>(X0), <http://www.owl-ontologies.com/travel.owl#Relaxation>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Adventure>(X0), <http://www.owl-ontologies.com/travel.owl#Sports>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Sports>(X0), <http://www.owl-ontologies.com/travel.owl#Sightseeing>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Adventure>(X0), <http://www.owl-ontologies.com/travel.owl#Relaxation>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Hotel>(X0), <http://www.owl-ontologies.com/travel.owl#BedAndBreakfast>(X0).
+ ! :- <http://www.owl-ontologies.com/travel.owl#Hotel>(X0), <http://www.owl-ontologies.com/travel.owl#Campground>(X0).
+<http://www.owl-ontologies.com/travel.owl#Activity>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasActivity>(X3, X0).
+<http://www.owl-ontologies.com/travel.owl#Accommodation>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasAccommodation>(X3, X0).
+<http://www.owl-ontologies.com/travel.owl#AccommodationRating>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasRating>(X3, X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasPart>(X3, X0).
+<http://www.owl-ontologies.com/travel.owl#Contact>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasContact>(X3, X0).
+<http://www.owl-ontologies.com/travel.owl#Destination>(X0) :- <http://www.owl-ontologies.com/travel.owl#isOfferedAt>(X3, X0).
+<http://www.owl-ontologies.com/travel.owl#hasPart>(X0, X2) :- <http://www.owl-ontologies.com/travel.owl#hasPart>(X0, X1), <http://www.owl-ontologies.com/travel.owl#hasPart>(X1, X2).
+<http://www.owl-ontologies.com/travel.owl#isOfferedAt>(X1, X0) :- <http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X1).
+<http://www.owl-ontologies.com/travel.owl#hasActivity>(X0, X1) :- <http://www.owl-ontologies.com/travel.owl#isOfferedAt>(X1, X0).
+<http://www.owl-ontologies.com/travel.owl#Contact>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasStreet>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Contact>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasEMail>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Contact>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasCity>(X0, X3).
+<http://www.owl-ontologies.com/travel.owl#Contact>(X0) :- <http://www.owl-ontologies.com/travel.owl#hasZipCode>(X0, X3).
+
