@@ -221,8 +221,8 @@ defmodule ECompleto.Rules do
   def one_step_drewrite(cc, rule=%ECompleto.Rules.DERule{}) do
     {rule, cc} = rename_appart(rule, cc)
 
-    # Logger.debug("Using CC #{cc}")
-    # Logger.debug("Rewrite DER #{rule}")
+    Logger.debug("Using CC #{cc}")
+    Logger.debug("Rewrite DER #{rule}")
 
     ## IMPORTANT CC has no possitive part
 
