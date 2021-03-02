@@ -2,6 +2,12 @@
 
 ## Running
 
+From bash:
+```
+time mix run -e "ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries2.txt') |> Enum.map(&(\"#{&1}\"))"  
+```
+
+From `iex -S mix`
 ```
 ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries.txt', 0)
 ```
