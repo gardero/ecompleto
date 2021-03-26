@@ -275,6 +275,9 @@ defmodule ECompleto.Clauses do
   end
 
 
+  @doc """
+  Returns a stream of all the subsets of the list of literals that unify with a specified literal.
+  """
   defp unifying_literals_stream(literals_list, literal) do
     literals_list
       |> Enum.filter(&(
@@ -286,11 +289,24 @@ defmodule ECompleto.Clauses do
       |> ECompleto.Utils.subsets_stream
   end
 
-  defp unifying_single_literals_stream(literals_list, literal) do
+  @doc """
+  Returns a stream of mgus of the literals that unify with a specified literal.
+  """
+  def unifying_single_literals_stream(literals_list, literal) do
     literals_list
       |> Enum.map(fn l-> l |> unify(literal, %{}) end)
       |> Enum.filter(fn {uni, _mg} -> uni end)
       |> Enum.map(fn {_uni, mg}-> mg end)
+  end
+
+
+  @doc """
+  Returns a stream of literals and mgu pairs that unify with a specified literal.
+  """
+  def unifying_single_literals_mgu_stream(literals_list, literal) do
+    literals_list
+      |> Enum.map(fn l-> l |> unify(literal, %{}) end)
+      |> Enum.filter(fn {uni, _mg} -> uni end)
   end
 
   defp unifying_literals(literals_list, literal) do

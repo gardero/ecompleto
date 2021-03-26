@@ -19,6 +19,9 @@ ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queri
 ```
 Currenly it takes around 10 seconds.
 
+* Make sure skollem vars do not have the same name in different rules.
+* 
+
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed

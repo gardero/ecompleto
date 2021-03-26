@@ -1,0 +1,13 @@
+
+[(diabetic(Y), sibling(Y,X)), (diabetic(Z), parent(Z,X))] :- diabetesRisk(X).
+
+%diabetic(Y), sibling(Y,X) :- diabetesRisk(X).
+%diabetic(Z), parent(Z,X) :- diabetesRisk(X).
+sibling(X,Y) :- sibling(Y,X).
+!:- singleChild(X), sibling(X,Y).
+
+%?:- diabetic(X).
+
+
+?:- diabetic(X), parent(X,Y).
+%?:- singleChild(X), sibling(Y,X).
