@@ -4,11 +4,17 @@
 defprotocol ECompleto.Unification.Substitutions do
   @fallback_to_any true
   @spec apply_substitution(any, any) :: any
+  @doc """
+  applies a substitution to a formula or term.
+  """
   def apply_substitution(term, s)
 end
 
 defprotocol ECompleto.Unification.Transform do
   @fallback_to_any true
+  @doc """
+  applies a transformation function to a formula or a term.
+  """
   def transform_terms(term, function)
 end
 
@@ -132,6 +138,9 @@ defmodule ECompleto.Unification do
   import  ECompleto.Unification.Substitutions
 
 
+  @doc """
+  builds the composition of two substitutions, i.e., s1(s2)
+  """
   def compose(s1, s2) do
     s1
       |> Map.new(fn {k, v} -> {k, v |> apply_substitution(s2)} end)
@@ -139,14 +148,23 @@ defmodule ECompleto.Unification do
   end
 
 
+  @doc """
+  creates an empty substitution.
+  """
   def new_substitution() do
     %{}
   end
 
+  @doc """
+  creates a substitution based on the mappings of another substitution.
+  """
   def new_substitution(other) do
     other |> Map.new(fn {k, v} -> {k |> String.Chars.to_string , v} end)
   end
 
+  @doc """
+  checks if a term contains another term.
+  """
   def contains?(term = %{}, t) do
     term
     |> Map.values
@@ -163,26 +181,12 @@ defmodule ECompleto.Unification do
   end
 
 
-  # def unify(term1, term1, u) when is_atom(term1) do
-  #   {true, u}
-  # end
 
   def unify([], [], u) do
     {true, u}
   end
 
   def unify([x1 | r1], [x2 | r2], u) do
-    # IO.inspect "List Term1 -------> #{Kernel.inspect(x1)}"
-    # IO.inspect "List Term2 -------> #{Kernel.inspect(x2)}"
-
-    # case unify(x1, x2, u) do
-    #   {true, u_new} -> unify(
-    #     Enum.map(r1, &(&1 |> apply_substitution(u_new))),
-    #     Enum.map(r2, &(&1 |> apply_substitution(u_new))),
-    #     u_new)
-    #   _ -> {false , %{}}
-    # end
-
     case unify(x1 |> apply_substitution(u), x2 |> apply_substitution(u), u) do
       {true, u_new} -> unify(r1, r2, u_new)
       _ -> {false , %{}}
@@ -190,32 +194,10 @@ defmodule ECompleto.Unification do
 
   end
 
-  # def unify(term1=%{}, term2, u) when is_atom(term2) do
-  #   t1 = Map.get(term1, :type)
-
-  #   if t1== :variable do
-  #     {true, compose_substitution(u, %{var_key(term1)=> term2})}
-  #   else
-  #     {false, %{}}
-  #   end
-  # end
-
-  # def unify(term1, term2 = %{}, u) when is_atom(term1) do
-  #   t2 = Map.get(term2, :type)
-
-  #   if t2== :variable do
-  #     {true, compose_substitution(u, %{var_key(term2)=> term1})}
-  #   else
-  #     {false, %{}}
-  #   end
-  # end
-
+  @doc """
+  checks if two terms unify with respect to a unifier.
+  """
   def unify(term1=%{}, term2=%{}, u) do
-
-
-    # IO.inspect "Map Term1 -------> #{Kernel.inspect(term1)}"
-    # IO.inspect "Map Term2 -------> #{Kernel.inspect(term2)}"
-
     t1 = Map.get(term1, :type)
     t2 = Map.get(term2, :type)
 
@@ -251,9 +233,11 @@ defmodule ECompleto.Unification do
     {false, %{}}
   end
 
-
   def mgu([], u), do: {true, u}
   def mgu([_term], u), do: {true, u}
+  @doc """
+  finds the most general unifier (mgu) of the formulas in a list  with respect to a substitution.
+  """
   def mgu([t1, t2| rest], u) do
     {du, new_u} = unify(t1,t2,u)
     if du do
@@ -265,6 +249,9 @@ defmodule ECompleto.Unification do
     end
   end
 
+  @doc """
+  finds the most general unifier (mgu) of the formulas in a list.
+  """
   def mgu(l), do: mgu(l,new_substitution())
 
 

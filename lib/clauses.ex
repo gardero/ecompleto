@@ -30,7 +30,10 @@ end
 
 defmodule ECompleto.Clauses.Clause do
   @doc """
-  Defines a clause.
+  Defines a clause. It contains a list of positive literals and a list of negative literals.
+  It also contains some other information to speed up computations, e.g. a list of pairs perdicates/arity in the clause,
+  a frozen (with variables turned into constants) version of the lits of positive, negative literals.
+
   """
   defstruct [
     positive: [],
@@ -131,6 +134,9 @@ defmodule ECompleto.Clauses do
     %{f | negated: !f.negated}
   end
 
+  @doc """
+  Turns the variables into constants.
+  """
   def freeze(literals) do
     literals |> ECompleto.Unification.Transform.transform_terms(fn term ->
       type = Map.get(term, :type)
@@ -143,6 +149,9 @@ defmodule ECompleto.Clauses do
   end
 
 
+  @doc """
+  iterates through the subformulas, terms and subterms of a formula.
+  """
   def iterate_subterms(term) when is_list(term) do
     term
     |> Stream.flat_map(
@@ -195,6 +204,9 @@ defmodule ECompleto.Clauses do
       )
   end
 
+  @doc """
+  computes the maximum indexes that the variables have in a formula.
+  """
   defp max_indexes(term, initial) do
     vars = term
     |> iterate_subterms
@@ -252,6 +264,9 @@ defmodule ECompleto.Clauses do
     rename(term, %{})
   end
 
+  @doc """
+  buils a renaming substitution for a term such that the indexes of the variables start from a specified minimum value.
+  """
   def build_renaming(term, fr0) do
     vars = term
     |> iterate_subterms
@@ -265,12 +280,14 @@ defmodule ECompleto.Clauses do
     Map.new(maps)
   end
 
+  @doc """
+  renames two formulas so that they dont share the same variables.
+  """
+  end
   def rename_appart(term1, term2) do
-    # {term1, fr1} = rename(term1)
     fr1 = term1 |> max_indexes(%{})
     fr1 = term2 |> max_indexes(fr1)
     renaming = term2 |> build_renaming(fr1)
-    # {term2, _} = rename(term2, fr1)
     {term1, term2 |> apply_substitution(renaming)}
   end
 
@@ -292,7 +309,7 @@ defmodule ECompleto.Clauses do
   @doc """
   Returns a stream of mgus of the literals that unify with a specified literal.
   """
-  def unifying_single_literals_stream(literals_list, literal) do
+  defp unifying_single_literals_stream(literals_list, literal) do
     literals_list
       |> Enum.map(fn l-> l |> unify(literal, %{}) end)
       |> Enum.filter(fn {uni, _mg} -> uni end)
@@ -319,6 +336,9 @@ defmodule ECompleto.Clauses do
         )
   end
 
+  @doc """
+  unifies the answer literals in a list of literals.
+  """
   def unify_answer_literals(literals_list) do
     al = literals_list
       |> Enum.filter(fn l -> l |> is_answer_literal end
@@ -332,6 +352,9 @@ defmodule ECompleto.Clauses do
   end
 
 
+  @doc """
+  gives a stream of all the factos of a list of literals.
+  """
   defp literal_factors_stream([]), do: []
 
   defp literal_factors_stream([literal| rest_clause]) do
@@ -344,6 +367,12 @@ defmodule ECompleto.Clauses do
   end
 
 
+  @doc """
+  Skolemizes the existential variables of a rule by replacing them with unique (local to the rule)
+  Skolem fuctions. As long as we do rewritings with respect to clauses that do not contain Skolem terms this
+  should be fine. However, in Chase algorithms we need to ensure that the nulls created have a globally unique
+  function symbol.
+  """
   def skolemize(head, body) do
     existential_vars = head
       |> ECompleto.Clauses.iterate_subterms
@@ -371,23 +400,32 @@ defmodule ECompleto.Clauses do
   end
 
 
+  @doc """
+  checks if clause1 subsumes clause2, i.e., clause2 can be dediced from clause1.
+  """
   def subsumes(clause1, clause2) do
     subset_unify(clause1.positive, clause2.positive_frozen) and subset_unify(clause1.negative, clause2.negative_frozen)
   end
 
-  def subset_unify([], _clause2) do
+  @doc """
+  checks if all the literals in a list unify (in a compatible way) with all the literals in another list.
+  """
+  def subset_unify([], _list2) do
     true
   end
 
-  def subset_unify([literal|rest1], clause2) do
-    clause2
+  def subset_unify([literal|rest1], list2) do
+    list2
       |> unifying_single_literals_stream(literal)
       |> Stream.map(fn mg_unifier ->
         rest1 |> apply_substitution(mg_unifier)
       end)
-      |> Enum.any?(&(&1 |> subset_unify(clause2)))
+      |> Enum.any?(&(&1 |> subset_unify(list2)))
   end
 
+  @doc """
+  computes a Stream of the resolvents from two clauses.
+  """
   def list_resolvents(clause1, clause2) do # use renamings!!
     # IO.inspect clause1
 
