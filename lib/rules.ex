@@ -71,13 +71,13 @@ end
 
 defmodule ECompleto.Rules do
 
-
+  @doc """
+  creates a new existential rule with a specified head and body.
+  """
   def new_erule(head, body) do
 
-    ### Skolemize
-
     head = skolemize(head, body)
-
+    # builds clauses assiated to the rule.
     b = body |> Enum.map(&(complement(&1)))
     c = if head |> length > 0 do
       head |> Enum.map(
@@ -89,6 +89,7 @@ defmodule ECompleto.Rules do
      [new_clause([],b)]
     end
 
+    # renames the clauses to ensure they dont share variables.
     {c, _x} = Enum.map_reduce(c, %{}, fn ci, frs ->
       # IO.inspect frs
       rename(ci, frs)
@@ -105,6 +106,9 @@ defmodule ECompleto.Rules do
   end
 
 
+  @doc """
+  creates a new disjunctive existential rule with a specified head and body.
+  """
   def new_derule(head, body) do
 
     head = head |> Enum.map(
@@ -112,6 +116,7 @@ defmodule ECompleto.Rules do
         skolemize(hi, body)
       end
     )
+    # for now we are not building the clase representation.
     c = []
     %ECompleto.Rules.DERule{
       head: head,
@@ -119,6 +124,67 @@ defmodule ECompleto.Rules do
       clauses: c
     }
 
+  end
+
+  @doc """
+  rewrites (one step) a query (or a clause) with respect to an existential rule.
+  """
+  def one_step_rewrite(q=%ECompleto.Queries.CQuery{}, rule) do
+    one_step_rewrite(q.clauses |> List.first, rule)
+  end
+
+  def one_step_rewrite(cc, rule=%ECompleto.Rules.ERule{}) do
+    # fist we do a fast check to see if the clause contains any of the predicates in the head of the rule.
+    if (Enum.any?(rule.head, fn a -> a.key in cc.negative_keys end)) do
+      # we then ansure that the clause does not share a variable with the clauses in or rule.
+      {rule, cc} = rename_appart(rule, cc)
+      # then we apply all possible resolution steps with respect to the clauses of the rules and
+      # keep the ones that do not leave skollem terms in the result.
+      %{clauses: cl} = rule
+      [{cc, [],%{}}]
+        |> one_step_rewrite_aux(cl)
+        |> Enum.filter(
+          fn {c, new_atoms, _mg_unifier} ->
+            c != cc and !(c |> iterate_subterms |> Enum.any?(&( &1 |> is_skterm? ))) and !(new_atoms |> iterate_subterms |> Enum.any?(&( &1 |> is_skterm? )))
+          end
+        )
+        |> Enum.map(
+          # then we build the clauses and unify the answer literals.
+          fn {c, new_atoms, _mg_unifier} ->
+            %{positive: pc, negative: nc} = c
+            new_clause(pc, (nc++new_atoms) |> unify_answer_literals)
+          end
+        )
+    else
+      []
+    end
+  end
+
+  @doc """
+  rewrites (one step) a query (or a clause) with respect to a list of existential rules.
+  Each rule is used in parallel then the results are combined.
+  """
+  def one_step_rewrite(cc, rules) when is_list(rules) do
+    async_rewrite = fn(r) ->
+      caller = self()
+      spawn(fn ->
+        send(caller, {:result, one_step_rewrite(cc, r)})
+      end)
+    end
+
+    get_result = fn ->
+      receive do
+      {:result, result} -> result
+      end
+    end
+
+    rules |> Enum.map(&async_rewrite.(&1))
+    |> Enum.map(fn(_) -> get_result.() end)
+    |> Enum.flat_map(
+          fn rw ->
+            rw
+          end
+        )
   end
 
 
@@ -159,55 +225,6 @@ defmodule ECompleto.Rules do
   end
 
 
-  def one_step_rewrite(q=%ECompleto.Queries.CQuery{}, rule) do
-    one_step_rewrite(q.clauses |> List.first, rule)
-  end
-
-  def one_step_rewrite(cc, rule=%ECompleto.Rules.ERule{}) do
-    if (Enum.any?(rule.head, fn a -> a.key in cc.negative_keys end)) do
-      {rule, cc} = rename_appart(rule, cc)
-      %{clauses: cl} = rule
-      [{cc, [],%{}}]
-        |> one_step_rewrite_aux(cl)
-        |> Enum.filter(
-          fn {c, new_atoms, _mg_unifier} ->
-            c != cc and !(c |> iterate_subterms |> Enum.any?(&( &1 |> is_skterm? ))) and !(new_atoms |> iterate_subterms |> Enum.any?(&( &1 |> is_skterm? )))
-          end
-        )
-        |> Enum.map(
-          fn {c, new_atoms, _mg_unifier} ->
-            %{positive: pc, negative: nc} = c
-            new_clause(pc, (nc++new_atoms) |> unify_answer_literals)
-          end
-        )
-    else
-      []
-    end
-  end
-
-  def one_step_rewrite(cc, rules) when is_list(rules) do
-    async_rewrite = fn(r) ->
-      caller = self()
-      spawn(fn ->
-        send(caller, {:result, one_step_rewrite(cc, r)})
-      end)
-    end
-
-    get_result = fn ->
-      receive do
-      {:result, result} -> result
-      end
-    end
-
-    rules |> Enum.map(&async_rewrite.(&1))
-    |> Enum.map(fn(_) -> get_result.() end)
-    |> Enum.flat_map(
-          fn rw ->
-            rw
-          end
-        )
-  end
-
 
   # def one_step_rewrite(cc, rules) when is_list(rules) do
   #   rules
@@ -218,6 +235,9 @@ defmodule ECompleto.Rules do
   #     )
   # end
 
+  @doc """
+  rewrites (one step) a clause with respect to a disjunctive existential rule.
+  """
   def one_step_drewrite(cc, rule=%ECompleto.Rules.DERule{}) do
     {rule, cc} = rename_appart(rule, cc)
 

@@ -33,21 +33,6 @@ defmodule ECompleto.Unification do
     end
   end
 
-  # defimpl String.Chars, for: List do
-  #   def to_string(clause) do
-  #     args = clause
-  #       |> Enum.map(&( &1 |> String.Chars.to_string ))
-  #       |> Enum.join(", ")
-  #     "[#{args}]"
-  #   end
-  # end
-
-  # defimpl String.Chars, for: BitString do
-  #   def to_string(m) do
-  #     "m"
-  #   end
-  # end
-
 
   defimpl  ECompleto.Unification.Substitutions, for: ECompleto.Terms.Variable do
     def apply_substitution(term, s), do: Map.get(s, term |> String.Chars.to_string, term)
