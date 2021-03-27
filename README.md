@@ -1,4 +1,4 @@
-# Ecompleto
+# ECompleto
 
 ## Running
 
@@ -9,7 +9,7 @@ time mix run -e "ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontolo
 
 From `iex -S mix`
 ```
-ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries.txt', 0)
+iex(1)> ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries.txt', 0)
 ```
 
 ** TODO 

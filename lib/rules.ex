@@ -126,10 +126,6 @@ defmodule ECompleto.Rules do
 
   end
 
-  @doc """
-  rewrites (one step) a query (or a clause) with respect to an existential rule.
-  The idea here is to use clauses that has no possitive literals.
-  """
   def one_step_rewrite(q=%ECompleto.Queries.CQuery{}, rule) do
     one_step_rewrite(q.clauses |> List.first, rule)
   end

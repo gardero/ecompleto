@@ -283,7 +283,6 @@ defmodule ECompleto.Clauses do
   @doc """
   renames two formulas so that they dont share the same variables.
   """
-  end
   def rename_appart(term1, term2) do
     fr1 = term1 |> max_indexes(%{})
     fr1 = term2 |> max_indexes(fr1)
