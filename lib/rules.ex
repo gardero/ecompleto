@@ -128,6 +128,7 @@ defmodule ECompleto.Rules do
 
   @doc """
   rewrites (one step) a query (or a clause) with respect to an existential rule.
+  The idea here is to use clauses that has no possitive literals.
   """
   def one_step_rewrite(q=%ECompleto.Queries.CQuery{}, rule) do
     one_step_rewrite(q.clauses |> List.first, rule)
@@ -163,6 +164,7 @@ defmodule ECompleto.Rules do
   @doc """
   rewrites (one step) a query (or a clause) with respect to a list of existential rules.
   Each rule is used in parallel then the results are combined.
+  The idea here is to use clauses that has no possitive literals.
   """
   def one_step_rewrite(cc, rules) when is_list(rules) do
     async_rewrite = fn(r) ->
@@ -237,6 +239,7 @@ defmodule ECompleto.Rules do
 
   @doc """
   rewrites (one step) a clause with respect to a disjunctive existential rule.
+  The idea here is to use clauses that has no possitive literals.
   """
   def one_step_drewrite(cc, rule=%ECompleto.Rules.DERule{}) do
     {rule, cc} = rename_appart(rule, cc)
