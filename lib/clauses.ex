@@ -13,7 +13,7 @@ defmodule ECompleto.Clauses.Atom do
         |> Enum.map(&( &1 |> String.Chars.to_string ))
       sign = if atom.negated do "-" else "" end
       pred = "#{atom.predicate}"
-      f = if ( pred  |> String.starts_with?("http://")) do
+      f = if ( pred  |> String.starts_with?("http://") or pred  |> String.starts_with?("file://")) do
         "#{sign}<#{pred}>"
       else
         "#{sign}#{pred}"
@@ -38,8 +38,8 @@ defmodule ECompleto.Clauses.Clause do
   defstruct [
     positive: [],
     negative: [],
-    positive_keys: [],
-    negative_keys: [],
+    positive_keys: MapSet.new([]),
+    negative_keys: MapSet.new([]),
     positive_frozen: [] ,
     negative_frozen: [],
     type: :clause
@@ -80,10 +80,10 @@ defmodule ECompleto.Clauses do
     %ECompleto.Clauses.Clause{
       positive: p,
       positive_frozen: p |> freeze,
-      positive_keys: p |> Enum.map(fn a -> a.key end) |> Enum.uniq,
+      positive_keys: p |> MapSet.new(fn a -> a.key end),
       negative: n,
       negative_frozen: n |> freeze,
-      negative_keys: n |> Enum.map(fn a -> a.key end) |> Enum.uniq
+      negative_keys: n |> MapSet.new(fn a -> a.key end)
     }
   end
 
@@ -139,12 +139,16 @@ defmodule ECompleto.Clauses do
   """
   def freeze(literals) do
     literals |> ECompleto.Unification.Transform.transform_terms(fn term ->
-      type = Map.get(term, :type)
-      if type == :variable do
-        new_term(term.name,[])
-      else
-        term
-      end
+      case term do
+        %{} ->
+          type = Map.get(term, :type)
+          if type == :variable do
+            new_term(term.name,[])
+          else
+            term
+          end
+        _ -> term
+        end
     end)
   end
 
@@ -321,8 +325,8 @@ defmodule ECompleto.Clauses do
   """
   def unifying_single_literals_mgu_stream(literals_list, literal) do
     literals_list
-      |> Enum.map(fn l-> l |> unify(literal, %{}) end)
-      |> Enum.filter(fn {uni, _mg} -> uni end)
+      |> Stream.map(fn l-> l |> unify(literal, %{}) end)
+      |> Stream.filter(fn {uni, _mg} -> uni end)
   end
 
   defp unifying_literals(literals_list, literal) do
@@ -403,7 +407,12 @@ defmodule ECompleto.Clauses do
   checks if clause1 subsumes clause2, i.e., clause2 can be dediced from clause1.
   """
   def subsumes(clause1, clause2) do
-    subset_unify(clause1.positive, clause2.positive_frozen) and subset_unify(clause1.negative, clause2.negative_frozen)
+    if clause1.positive_keys |> MapSet.subset?(clause2.positive_keys)
+      and clause1.negative_keys |> MapSet.subset?(clause2.negative_keys) do
+        subset_unify(clause1.positive, clause2.positive_frozen) and subset_unify(clause1.negative, clause2.negative_frozen)
+      else
+        false
+      end
   end
 
   @doc """

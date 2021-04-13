@@ -23,7 +23,11 @@ defmodule ECompleto.Rules.ERule do
         |> Enum.join(", ")
 
       if rule.head |> length > 0 do
-        "#{ahead} :- #{abody}."
+        if rule.body |> length > 0 do
+          "#{ahead} :- #{abody}."
+        else
+          "#{ahead}."
+        end
       else
         "! :- #{abody}."
       end

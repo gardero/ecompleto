@@ -17,6 +17,7 @@ defmodule ECompleto.Facts.FactsDB do
   """
   def answer(program=%ECompleto.Program{}) do
     db_name = :temporal_db
+    delete_factsDB(db_name)
     init_factsDB(db_name)
     program.facts
       |> Enum.map(fn r->
@@ -24,13 +25,13 @@ defmodule ECompleto.Facts.FactsDB do
         h |> Enum.map(fn a-> add_atom(a,db_name) end)
 
     end)
-    program.queries
-      |>  Enum.map(fn q->
+    res = program.queries
+      |>  Stream.flat_map(fn q->
             answer_cq(q, db_name)
           end)
+      |> Stream.uniq()
 
-
-
+    res
     #   {constraint_clauses, _, _} = (program.queries |> Enum.flat_map(&(&1.clauses))) ++ (program.constraints |> Enum.flat_map(&(&1.clauses)))
     #   |> most_general([])
     #   Logger.info("CQs #{constraint_clauses|> Enum.map(&("#{&1}")) |> Enum.join(", ")}")
@@ -47,11 +48,21 @@ defmodule ECompleto.Facts.FactsDB do
     :ets.new(db_name, [:bag, :protected, :named_table])
   end
 
+  @doc """
+  deletes a ETS table.
+  """
+  def delete_factsDB(db_name) do
+    if :ets.whereis(db_name) != :undefined do
+      :ets.delete(db_name)
+    end
+  end
+
 
   @doc """
   adds an atom belonging to a fact into a facts DB.
   """
   def add_atom(atom, db_name) do
+    IO.inspect "Adding #{atom}"
     %{predicate: f, arguments: args} = atom
     :ets.insert(db_name, {f, args, atom})
   end
@@ -106,7 +117,7 @@ defmodule ECompleto.Facts.FactsDB do
 
   def query_subset_unify([atom | list_atoms], db_name, u) do
     unifying_atoms(atom, db_name)
-      |> Enum.flat_map(fn {_lit, mg_unifier} ->
+      |> Stream.flat_map(fn {_lit, mg_unifier} ->
         list_atoms
           |> apply_substitution(mg_unifier)
           |> query_subset_unify(db_name, compose(u, mg_unifier))
@@ -124,7 +135,7 @@ defmodule ECompleto.Facts.FactsDB do
   def answer_cq(cquery, db_name) do
     %{body: b} = cquery
     b |> query_subset_unify(db_name)
-      |> Enum.map(fn u->
+      |> Stream.map(fn u->
           IO.inspect(cquery.answer_tuple)
           IO.inspect(u)
           cquery.answer_tuple |> apply_substitution(u)

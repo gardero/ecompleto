@@ -68,7 +68,7 @@ defmodule ECompleto.Unification do
   defimpl  ECompleto.Unification.Transform, for: ECompleto.Clauses.Atom do
     def transform_terms(atom, function) do
       new_arguments = atom.arguments |> ECompleto.Unification.Transform.transform_terms(function)
-      %{atom | arguments: new_arguments}
+      ECompleto.Clauses.new_literal(function.(atom.predicate), new_arguments, atom.negated)
     end
   end
 
@@ -92,6 +92,31 @@ defmodule ECompleto.Unification do
               clause.negative |> ECompleto.Unification.Transform.transform_terms(function))
     end
   end
+
+  defimpl  ECompleto.Unification.Transform, for: ECompleto.Program do
+    def transform_terms(prog, function) do
+      ECompleto.Program.new_program(prog.headers, prog.body |> ECompleto.Unification.Transform.transform_terms(function))
+    end
+  end
+
+  defimpl  ECompleto.Unification.Transform, for: ECompleto.Rules.ERule do
+    def transform_terms(rule, function) do
+      ECompleto.Rules.new_erule(rule.head |>  ECompleto.Unification.Transform.transform_terms(function), rule.body |>  ECompleto.Unification.Transform.transform_terms(function))
+    end
+  end
+
+  defimpl  ECompleto.Unification.Transform, for: ECompleto.Rules.DERule do
+    def transform_terms(rule, function) do
+      ECompleto.Rules.new_derule(rule.head |>  ECompleto.Unification.Transform.transform_terms(function), rule.body |>  ECompleto.Unification.Transform.transform_terms(function))
+    end
+  end
+
+  defimpl  ECompleto.Unification.Transform, for: ECompleto.Queries.CQuery do
+    def transform_terms(q, function) do
+      ECompleto.Queries.new_cquery(q.answer_tuple |> ECompleto.Unification.Transform.transform_terms(function), q.body |>  ECompleto.Unification.Transform.transform_terms(function))
+    end
+  end
+
 
   defimpl  ECompleto.Unification.Substitutions, for: ECompleto.Rules.ERule do
     def apply_substitution(rule, s) do

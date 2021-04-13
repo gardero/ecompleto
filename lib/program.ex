@@ -3,11 +3,12 @@
 
 defmodule ECompleto.Program do
 
-  defstruct [headers: [], rules: [], disj_rules: [], queries: [], constraints: [], facts: []]
+  defstruct [headers: [], body: [], rules: [], disj_rules: [], queries: [], constraints: [], facts: []]
 
   def new_program(headers, body) do
     %ECompleto.Program{
       headers: headers,
+      body: body,
       rules: body |> Enum.filter(fn e ->
         e.type == :erule and e.body |> length >0 and e.head |> length >0
       end),
@@ -31,7 +32,7 @@ defmodule ECompleto.Program do
 
   defimpl String.Chars, for: ECompleto.Program do
     def to_string(prog) do
-      "@rules\n #{(prog.rules++prog.disj_rules) |> to_string_list("\n")}\n@queries\n#{prog.queries |> to_string_list("\n")}\n@constraints\n#{prog.constraints |> to_string_list("\n")}\n@facts\n #{prog.facts |> to_string_list("\n")}"
+      "@rules\n #{(prog.rules++prog.disj_rules) |> to_string_list("\n")}\n@queries\n#{prog.queries |> to_string_list("\n")}\n@constraints\n#{prog.constraints |> to_string_list("\n")}\n@facts\n#{prog.facts |> to_string_list("\n")}"
     end
   end
 
@@ -39,11 +40,35 @@ defmodule ECompleto.Program do
   import ECompleto.Queries
   import ECompleto.Clauses
 
+  def apply_prefix({prefix, rest}, maps) do
+    Map.get(maps, prefix) <> rest
+  end
+
+  def apply_prefix(elem, _) do
+    elem
+  end
+
+  def replace_prefixes(prog) do
+      maps = prog.headers
+      prog |> ECompleto.Unification.Transform.transform_terms(fn term ->
+        case term do
+          %{} ->
+            type = Map.get(term, :type)
+            case type do
+              :term -> %{term | functor: term.functor |> apply_prefix(maps)}
+              _ -> term
+            end
+          _ -> apply_prefix(term, maps)
+
+        end
+      end)
+  end
+
   def load_program(file_name) do
     {:ok, text} = File.read(file_name)
     {_, tokens, _} = :dlgp_lexer.string(String.to_charlist(text))
     {:ok, prog} = tokens |> :dlgp_parser.parse
-    prog
+    prog |> replace_prefixes
   end
 
   def to_program(clauses) do

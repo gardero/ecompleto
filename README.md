@@ -3,21 +3,33 @@
 ## Running
 
 From bash:
-```
+```bash
 time mix run -e "ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries2.txt') |> Enum.map(&(\"#{&1}\"))"  
 ```
 
 From `iex -S mix`
-```
+```elixir
 iex(1)> ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries.txt', 0)
 ```
 
 ** TODO 
 Achieve this under 2 seconds
-```
+```elixir
 ECompleto.Experiments.rewrite('ontologies/travel.dlgp', 'ontologies/travel.queries2.txt')
 ```
 Currenly it takes around 10 seconds.
+
+## Usage Examples
+
+To get the rewritings of a query
+```elixir
+ECompleto.Experiments.rewrite('experiments/AGOSUV-bench/A/A.dlp', 'experiments/AGOSUV-bench/A/A_queries.dlp', 0) |>  ECompleto.Program.to_file('experiments/AGOSUV-bench/A/A_rewritings_0_ecompleto.dlgp')
+```
+
+To get the answers of a query
+```elixir
+ECompleto.Experiments.answer('experiments/AGOSUV-bench/A/A.dlp', 'experiments/AGOSUV-bench/A/A_queries.dlp', 0) |>  ECompleto.Program.to_file('experiments/AGOSUV-bench/A/A_answers_0_ecompleto.dlgp')
+```
 
 
 ## Installation
