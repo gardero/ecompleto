@@ -48,6 +48,23 @@ defmodule ECompleto.Program do
     elem
   end
 
+
+  def use_prefix(elem, maps) when is_binary(elem) do
+    m = maps |> Enum.find_value(fn {key, v} when is_binary(v) ->
+      if elem |> String.starts_with?(v), do: {key, v}
+      _ -> false
+    end)
+    case m do
+      {k, v} -> elem |> String.replace(v,"#{k}:")
+        _ -> elem
+    end
+  end
+
+
+  def use_prefix(elem, _map) do
+    elem
+  end
+
   def replace_prefixes(prog) do
       maps = prog.headers
       prog |> ECompleto.Unification.Transform.transform_terms(fn term ->
@@ -63,6 +80,22 @@ defmodule ECompleto.Program do
         end
       end)
   end
+
+  def use_prefixes(prog) do
+    maps = prog.headers
+    prog |> ECompleto.Unification.Transform.transform_terms(fn term ->
+      case term do
+        %{} ->
+          type = Map.get(term, :type)
+          case type do
+            :term -> %{term | functor: term.functor |> use_prefix(maps)}
+            _ -> term
+          end
+        _ -> use_prefix(term, maps)
+
+      end
+    end)
+end
 
   def load_program(file_name) do
     {:ok, text} = File.read(file_name)
@@ -84,6 +117,11 @@ defmodule ECompleto.Program do
         end
       )
     new_program([], body)
+  end
+
+  def to_program(clauses, headers) do
+    res = to_program(clauses)
+    %{res | headers: headers}
   end
 
   def to_file(prog, file_name) do

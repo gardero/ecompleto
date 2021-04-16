@@ -11,7 +11,7 @@ defmodule ECompleto.Experiments do
     p = if (p.disj_rules |> length == 0) do %{ p | :constraints => []} else p end
     res = p
      |> ECompleto.Rewriting.rewrite
-     |> ECompleto.Program.to_program
+     |> ECompleto.Program.to_program(p.headers)
      Logger.info("It took #{:os.system_time(:millisecond)-t0} ms")
      res
   end
@@ -24,7 +24,7 @@ defmodule ECompleto.Experiments do
     p = if (p.disj_rules |> length == 0) do %{ p | :constraints => []} else p end
     res = p
      |> ECompleto.Rewriting.rewrite
-     |> ECompleto.Program.to_program
+     |> ECompleto.Program.to_program(p.headers)
      Logger.info("It took #{:os.system_time(:millisecond)-t0} ms")
      ECompleto.Program.new_program(p.headers, p.facts ++ res.body)
   end
@@ -36,6 +36,7 @@ defmodule ECompleto.Experiments do
     p = ECompleto.Program.new_program(p.headers ++ q.headers, q.body ++ p.body)
     p = if (q.disj_rules |> length == 0) do %{ p | :constraints => []} else p end
     res = p |> ECompleto.Rewriting.rewrite
+    |> ECompleto.Program.to_program(p.headers)
     Logger.info("It took #{:os.system_time(:millisecond)-t0} ms")
     res
   end
@@ -43,7 +44,7 @@ defmodule ECompleto.Experiments do
   def answer(program_file, queries_file, index) do
     cert = rewrite_plus_data(program_file, queries_file, index)
         |> ECompleto.Facts.FactsDB.answer
-        |> Enum.map(fn tuple ->
+        |> Stream.map(fn tuple ->
           ECompleto.Clauses.new_clause([ECompleto.Queries.new_answer_atom(tuple)],[])
         end)
         |> ECompleto.Program.to_program

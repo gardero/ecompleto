@@ -21,12 +21,12 @@ Currenly it takes around 10 seconds.
 
 ## Usage Examples
 
-To get the rewritings of a query
+* To get the rewritings of a query
 ```elixir
 ECompleto.Experiments.rewrite('experiments/AGOSUV-bench/A/A.dlp', 'experiments/AGOSUV-bench/A/A_queries.dlp', 0) |>  ECompleto.Program.to_file('experiments/AGOSUV-bench/A/A_rewritings_0_ecompleto.dlgp')
 ```
 
-To get the answers of a query
+* To get the answers of a query
 ```elixir
 ECompleto.Experiments.answer('experiments/AGOSUV-bench/A/A.dlp', 'experiments/AGOSUV-bench/A/A_queries.dlp', 0) |>  ECompleto.Program.to_file('experiments/AGOSUV-bench/A/A_answers_0_ecompleto.dlgp')
 ```
