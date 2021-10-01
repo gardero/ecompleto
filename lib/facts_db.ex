@@ -62,7 +62,7 @@ defmodule ECompleto.Facts.FactsDB do
   adds an atom belonging to a fact into a facts DB.
   """
   def add_atom(atom, db_name) do
-    IO.inspect "Adding #{atom}"
+    # IO.inspect "Adding #{atom}"
     %{predicate: f, arguments: args} = atom
     :ets.insert(db_name, {f, args, atom})
   end

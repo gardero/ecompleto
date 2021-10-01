@@ -69,3 +69,13 @@ Negation in queries with negated atoms is sprecified with the minus symbol, e.g.
 
 1. Consider that currently Skolem functions use the variable name as the functor of the Skolem term. This is ok if we do rewriting with respect to constraint clauses and never propagate those Skolem terms. However, the Chase algorithms need to ensure that the nulls generated have a globally unique ID.
 1. Implement some sort of substitution for the prefixes in the OWL notation inside the `dlgp` programs.
+
+## Bugs
+
+There is a problem when the initial query has only one negated atom. It is incorrectly seen as a disjunctive rule and then the queries produced remain as disjunctive rules and do not act like queries.
+
+For the initial query `[query2] ? (Y) :- :Object(Y), -:Blue(Y).` we have:
+
+```
+13:15:22.417 [debug] Rewrite DER ! :- <http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Yellow>(X0_1), answer_atom(X0_1), <http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Object>(X0_1).                                                                                                                                                                                                                                                              13:15:22.417 [debug] Using CC [-<http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Gray>(X0_1), -<http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Yellow>(X0_1)]                                                                                                                                                                                                                                                                                        13:15:22.417 [debug] Rewrite DER ! :- <http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Yellow>(X0_1), answer_atom(X0_1), <http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Object>(X0_1).                                                                                                                                                                                                                                                              13:15:22.419 [debug] Using CC [-<http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Green>(X0_1), -<http://sw.islab.ntua.gr/xai/CLEVR-Hans3#Red>(X0_1)]                                                                                             
+```
