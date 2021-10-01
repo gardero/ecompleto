@@ -3,6 +3,10 @@ import ExProf.Macro
 require Logger
 
 defmodule ECompleto.Experiments do
+
+  @doc """
+  Given a program and a query. The  UCQ rewriting of that query is found.
+  """
   def rewrite(program_file, queries_file, index) do
     t0 = :os.system_time(:millisecond)
     p = ECompleto.Program.load_program(program_file)
@@ -11,6 +15,22 @@ defmodule ECompleto.Experiments do
     p = if (p.disj_rules |> length == 0) do %{ p | :constraints => []} else p end
     res = p
      |> ECompleto.Rewriting.rewrite
+     |> ECompleto.Program.to_program(p.headers)
+     Logger.info("It took #{:os.system_time(:millisecond)-t0} ms")
+     res
+  end
+
+  @doc """
+  Given a program and a query. The  UCQ rewriting of that query is found.
+  """
+  def erewrite(program_file, queries_file, index) do
+    t0 = :os.system_time(:millisecond)
+    p = ECompleto.Program.load_program(program_file)
+    q = ECompleto.Program.load_program(queries_file).body
+    p = ECompleto.Program.new_program(p.headers, [q |> Enum.fetch!(index) | p.body])
+    p = if (p.disj_rules |> length == 0) do %{ p | :constraints => []} else p end
+    res = p
+     |> ECompleto.Rewriting.erewrite
      |> ECompleto.Program.to_program(p.headers)
      Logger.info("It took #{:os.system_time(:millisecond)-t0} ms")
      res
@@ -41,6 +61,9 @@ defmodule ECompleto.Experiments do
     res
   end
 
+  @doc """
+  Given a program with facts. A query is answered.
+  """
   def answer(program_file, queries_file, index) do
     cert = rewrite_plus_data(program_file, queries_file, index)
         |> ECompleto.Facts.FactsDB.answer

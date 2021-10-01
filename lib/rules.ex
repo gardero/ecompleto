@@ -189,6 +189,34 @@ defmodule ECompleto.Rules do
         )
   end
 
+  ## {new_cover, added, removed} = new_cc
+  ## |> most_general(ucq)
+  def one_step_rewrite_cover(cc, rules, ucq) when is_list(rules) do
+    async_rewrite = fn(r) ->
+      caller = self()
+      spawn(fn ->
+        send(caller, {:result, one_step_rewrite(cc, r)})
+      end)
+    end
+
+    get_result = fn ->
+      receive do
+      {:result, result} -> result
+      end
+    end
+
+    rules |> Enum.map(&async_rewrite.(&1))
+    |> Enum.map(fn(_) -> get_result.() end)
+    |> Enum.reduce({ucq, [], []}, fn rw, {new_cover, added, removed} ->
+      {new_cover1, added1, removed1} = rw
+      |> ECompleto.Rewriting.most_general(new_cover)
+      rem = removed++removed1
+      {new_cover1, (added++added1) -- rem, rem}
+    end)
+  end
+
+
+
 
   def one_step_rewrite_aux(ucq,[]) do
     ucq

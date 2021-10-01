@@ -3,6 +3,8 @@
   "dep_from_git": {:git, "https://github.com/rdf-elixir/rdf-ex.git", "550388b6ca28ae0baefacf9929f8988afdef679c", [tag: "v0.9.2"]},
   "exprintf": {:hex, :exprintf, "0.2.1", "b7e895dfb00520cfb7fc1671303b63b37dc3897c59be7cbf1ae62f766a8a0314", [:mix], [], "hexpm", "20a0e8c880be90e56a77fcc82533c5d60c643915c7ce0cc8aa1e06ed6001da28"},
   "exprof": {:hex, :exprof, "0.2.4", "13ddc0575a6d24b52e7c6809d2a46e9ad63a4dd179628698cdbb6c1f6e497c98", [:mix], [{:exprintf, "~> 0.2", [hex: :exprintf, repo: "hexpm", optional: false]}], "hexpm", "0884bcb66afc421c75d749156acbb99034cc7db6d3b116c32e36f32551106957"},
+  "flow": {:hex, :flow, "1.1.0", "b569c1042cb2da97103f6d70a0267a5657dce1402f41b4020bef98bbef9c7c1e", [:mix], [{:gen_stage, "~> 1.0", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm", "066f42f7a1ea6a86cb4ef763310338981a5cfb93bcebce10863a23a4859fd785"},
+  "gen_stage": {:hex, :gen_stage, "1.1.0", "dd0c0f8d2f3b993fdbd3d58e94abbe65380f4e78bdee3fa93d5618d7d14abe60", [:mix], [], "hexpm", "7f2b36a6d02f7ef2ba410733b540ec423af65ec9c99f3d1083da508aca3b9305"},
   "protocol_ex": {:hex, :protocol_ex, "0.4.3", "4acbe35da85109dc40315c1139bb7a65ebc7fc102d384cd8b3038384fbb9b282", [:mix], [], "hexpm", "6ca5ddb3505c9c86f17cd3f19838b34bf89966ae17078f79f81983b6a4391fe9"},
   "rdf": {:git, "https://github.com/rdf-elixir/rdf-ex.git", "550388b6ca28ae0baefacf9929f8988afdef679c", [tag: "v0.9.2"]},
   "rdf_ex": {:git, "https://github.com/rdf-elixir/rdf-ex.git", "550388b6ca28ae0baefacf9929f8988afdef679c", [tag: "v0.9.2"]},
