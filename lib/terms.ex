@@ -1,30 +1,31 @@
-
-
 defmodule ECompleto.Terms.FTerm do
   @doc """
   Defines a functional term with a functor and a list of arguments.
   """
   @enforce_keys [:functor]
-  defstruct [:functor , arguments: [], skolem: false, type: :term]
-
+  defstruct [:functor, arguments: [], skolem: false, type: :term]
 
   defimpl String.Chars, for: ECompleto.Terms.FTerm do
     def to_string(term) do
-      args = term.arguments
-        |> Enum.map(&( &1 |> String.Chars.to_string ))
+      args =
+        term.arguments
+        |> Enum.map(&(&1 |> String.Chars.to_string()))
         |> Enum.join(", ")
 
-      f = if term.skolem do
-        "#{term.functor |> String.Chars.to_string }'"
-      else
-        term.functor |> String.Chars.to_string
-        pred = "#{term.functor}"
-        if ( pred  |> String.starts_with?("http://")) do
-          "<#{pred}>"
+      f =
+        if term.skolem do
+          "#{term.functor |> String.Chars.to_string()}'"
         else
-          pred
+          term.functor |> String.Chars.to_string()
+          pred = "#{term.functor}"
+
+          if pred |> String.starts_with?("http://") do
+            "<#{pred}>"
+          else
+            pred
+          end
         end
-      end
+
       if term.arguments |> length > 0 do
         "#{f}(#{args})"
       else
@@ -32,7 +33,6 @@ defmodule ECompleto.Terms.FTerm do
       end
     end
   end
-
 end
 
 defmodule ECompleto.Terms.Variable do
@@ -40,7 +40,7 @@ defmodule ECompleto.Terms.Variable do
   Defines a variable with possibly an index for standarization appart purpuses.
   """
   @enforce_keys [:name]
-  defstruct [:name , index: 0, type: :variable]
+  defstruct [:name, index: 0, type: :variable]
 
   defimpl String.Chars, for: ECompleto.Terms.Variable do
     def to_string(v) do
@@ -51,11 +51,9 @@ defmodule ECompleto.Terms.Variable do
       end
     end
   end
-
 end
 
 defmodule ECompleto.Terms do
-
   @doc """
   Creates a term that represents a function functor and arguments.
 
@@ -86,7 +84,7 @@ defmodule ECompleto.Terms do
   Creates a variable with zero index
   """
   def new_var(vname) do
-    new_var(vname,0)
+    new_var(vname, 0)
   end
 
   @doc """
@@ -94,20 +92,17 @@ defmodule ECompleto.Terms do
 
   """
   def new_constant(constant) when is_atom(constant) do
-    new_term(constant,[])
+    new_term(constant, [])
   end
-
 
   @doc """
   Tells if the term is a Skolem term or not.
   """
-  def is_skterm?(x=%{}) do
-    Map.get(x,:skolem)
+  def is_skterm?(x = %{}) do
+    Map.get(x, :skolem)
   end
 
   def is_skterm?(_) do
     false
   end
-
-
 end
