@@ -72,6 +72,7 @@ Negation in queries with negated atoms is sprecified with the minus symbol, e.g.
 
 ## Bugs
 
+### Queries with one negated atom (Fixed)
 There is a problem when the initial query has only one negated atom. It is incorrectly seen as a disjunctive rule and then the queries produced remain as disjunctive rules and do not act like queries.
 
 For the initial query `[query2] ? (Y) :- :Object(Y), -:Blue(Y).` we have:
