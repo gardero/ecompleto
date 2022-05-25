@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="statistex" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/statistex/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/statistex/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/statistex/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/statistex/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/statistex/lib" />
+      <root url="file://$PROJECT_DIR$/deps/statistex/lib" />
+    </SOURCES>
+  </library>
+</component>
