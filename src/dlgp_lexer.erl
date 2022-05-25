@@ -1,4 +1,4 @@
--file("/usr/lib/erlang/lib/parsetools-2.2/include/leexinc.hrl", 0).
+-file("/home/gardero/.asdf/installs/erlang/24.1.5/lib/parsetools-2.3.1/include/leexinc.hrl", 0).
 %% The source of this file is part of leex distribution, as such it
 %% has the same Copyright as the other files in the leex
 %% distribution. The Copyright is defined in the accompanying file
@@ -34,11 +34,11 @@ double(TokenChars)   -> 'Elixir.RDF.Serialization.ParseHelper':double(TokenChars
 boolean(TokenChars)  -> 'Elixir.RDF.Serialization.ParseHelper':boolean(TokenChars).
 quoted_content_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':quoted_content_str(TokenChars).
 long_quoted_content_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':long_quoted_content_str(TokenChars).
-bnode_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':bnode_str(TokenChars).
+% bnode_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':bnode_str(TokenChars).
 langtag_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':langtag_str(TokenChars).
 prefix_ns(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':prefix_ns(TokenChars).
 prefix_ln(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':prefix_ln(TokenChars).
--file("/usr/lib/erlang/lib/parsetools-2.2/include/leexinc.hrl", 14).
+-file("/home/gardero/.asdf/installs/erlang/24.1.5/lib/parsetools-2.3.1/include/leexinc.hrl", 14).
 
 format_error({illegal,S}) -> ["illegal characters ",io_lib:write_string(S)];
 format_error({user,S}) -> S.
@@ -3011,4 +3011,4 @@ yyaction_38() ->
 yyaction_39() ->
      skip_token .
 
--file("/usr/lib/erlang/lib/parsetools-2.2/include/leexinc.hrl", 313).
+-file("/home/gardero/.asdf/installs/erlang/24.1.5/lib/parsetools-2.3.1/include/leexinc.hrl", 313).

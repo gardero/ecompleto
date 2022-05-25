@@ -1,4 +1,6 @@
 defmodule ECompleto.Utils do
+  @moduledoc false
+
   @doc """
   puts a key and value into a map.
   """
@@ -47,7 +49,6 @@ defmodule ECompleto.Utils do
   """
   def to_string_list(list, sep) do
     list
-    |> Enum.map(&(&1 |> String.Chars.to_string()))
-    |> Enum.join(sep)
+    |> Enum.map_join(sep, &(&1 |> String.Chars.to_string()))
   end
 end

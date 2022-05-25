@@ -1,6 +1,8 @@
 import ECompleto.Rules
 
 defmodule ECompleto.Program do
+  @moduledoc false
+
   defstruct headers: [],
             body: [],
             rules: [],
@@ -8,6 +10,16 @@ defmodule ECompleto.Program do
             queries: [],
             constraints: [],
             facts: []
+
+  @type t() :: %ECompleto.Program{
+          headers: [],
+          body: [],
+          rules: [],
+          disj_rules: [],
+          queries: [],
+          constraints: [],
+          facts: []
+        }
 
   def new_program(headers, body) do
     %ECompleto.Program{
@@ -52,11 +64,7 @@ defmodule ECompleto.Program do
 
   defimpl String.Chars, for: ECompleto.Program do
     def to_string(prog) do
-      "@rules\n #{(prog.rules ++ prog.disj_rules) |> to_string_list("\n")}\n@queries\n#{
-        prog.queries |> to_string_list("\n")
-      }\n@constraints\n#{prog.constraints |> to_string_list("\n")}\n@facts\n#{
-        prog.facts |> to_string_list("\n")
-      }"
+      "@rules\n #{(prog.rules ++ prog.disj_rules) |> to_string_list("\n")}\n@queries\n#{prog.queries |> to_string_list("\n")}\n@constraints\n#{prog.constraints |> to_string_list("\n")}\n@facts\n#{prog.facts |> to_string_list("\n")}"
     end
   end
 
@@ -135,9 +143,27 @@ defmodule ECompleto.Program do
 
   def load_program(file_name) do
     {:ok, text} = File.read(file_name)
+    load_program_from_text(text)
+  end
+
+  def load_program_from_text(text) do
     {_, tokens, _} = :dlgp_lexer.string(String.to_charlist(text))
     {:ok, prog} = tokens |> :dlgp_parser.parse()
     prog |> replace_prefixes
+  end
+
+  def program_to_cnf(program = %ECompleto.Program{}) do
+    program.body
+    |> Enum.flat_map(fn line ->
+      line.clauses
+    end)
+  end
+
+  def program_to_cnf(lines) do
+    lines
+    |> Enum.flat_map(fn line ->
+      line.clauses
+    end)
   end
 
   def to_program(clauses) do

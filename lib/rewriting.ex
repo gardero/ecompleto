@@ -1,4 +1,6 @@
 defmodule ECompleto.Rewriting do
+  @moduledoc false
+
   import ECompleto.Rules.ERule
   import ECompleto.Rules
   import ECompleto.Clauses
@@ -10,9 +12,9 @@ defmodule ECompleto.Rewriting do
          (program.constraints |> Enum.flat_map(& &1.clauses)))
       |> most_general([])
 
-    Logger.info("CQs #{constraint_clauses |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
-    Logger.info("Rules #{program.rules |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
-    Logger.info("DRules #{program.disj_rules |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+    Logger.info("CQs #{constraint_clauses |> Enum.map_join(", ", &"#{&1}")}")
+    Logger.info("Rules #{program.rules |> Enum.map_join(", ", &"#{&1}")}")
+    Logger.info("DRules #{program.disj_rules |> Enum.map_join(", ", &"#{&1}")}")
 
     rewrite_disj_queue(
       constraint_clauses,
@@ -131,7 +133,7 @@ defmodule ECompleto.Rewriting do
 
     {new_cc, _, _} = new_cc |> most_general([])
     Logger.info("New CQs -> #{new_cc |> length}")
-    Logger.debug("New CQs #{new_cc |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+    Logger.debug("New CQs #{new_cc |> Enum.map_join(", ", &"#{&1}")}")
 
     {new_cover, added, removed} =
       new_cc
@@ -144,7 +146,7 @@ defmodule ECompleto.Rewriting do
     end
 
     if removed |> length > 0 do
-      Logger.info("Removed CQs #{removed |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+      Logger.info("Removed CQs #{removed |> Enum.map_join(", ", &"#{&1}")}")
     end
 
     remaining = (ucq -- removed) -- added
@@ -157,11 +159,11 @@ defmodule ECompleto.Rewriting do
     ## this will have generated new_er and new_dr
     if (added |> length) + (new_dr |> length) + (new_er |> length) > 0 do
       if new_er |> length > 0 do
-        Logger.info("New ERs #{new_er |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+        Logger.info("New ERs #{new_er |> Enum.map_join(", ", &"#{&1}")}")
       end
 
       if new_dr |> length > 0 do
-        Logger.info("New DERs #{new_dr |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+        Logger.info("New DERs #{new_dr |> Enum.map_join(", ", &"#{&1}")}")
       end
 
       rewrite_disj(ucq, rules ++ new_er, drules ++ new_dr)
@@ -189,16 +191,14 @@ defmodule ECompleto.Rewriting do
     {new_er, new_dr} = rewrite_derules(ucq, new_dr, ucq, new_er, new_dr)
     ## this will have generated new_er and new_dr
     if (new_cq |> length) + (new_dr |> length) + (new_er |> length) > 0 do
-      Logger.info(
-        "New ==> ERs #{new_er |> length}, DERs #{new_dr |> length}, CQs #{new_cq |> length}"
-      )
+      Logger.info("New ==> ERs #{new_er |> length}, DERs #{new_dr |> length}, CQs #{new_cq |> length}")
 
       if new_er |> length > 0 do
-        Logger.debug("New ERs #{new_er |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+        Logger.debug("New ERs #{new_er |> Enum.map_join(", ", &"#{&1}")}")
       end
 
       if new_dr |> length > 0 do
-        Logger.debug("New DERs #{new_dr |> Enum.map(&"#{&1}") |> Enum.join(", ")}")
+        Logger.debug("New DERs #{new_dr |> Enum.map_join(", ", &"#{&1}")}")
       end
 
       rewrite_disj_queue(new_cq, ucq, rules ++ new_rules, new_er, drules ++ new_dr)

@@ -16,14 +16,14 @@ defprotocol ECompleto.Unification.Transform do
 end
 
 defmodule ECompleto.Unification do
+  @moduledoc false
   defimpl String.Chars, for: Map do
     def to_string(m) do
       args =
         m
-        |> Enum.map(fn {k, v} ->
+        |> Enum.map_join(", ", fn {k, v} ->
           "#{k}<-#{v |> String.Chars.to_string()}"
         end)
-        |> Enum.join(", ")
 
       "{#{args}}"
     end

@@ -1,83 +1,111 @@
-defmodule ECompleto.Clauses.Atom do
-  @doc """
-  Defines an atom (positive or negated) with a predicate and a list of arguments.
-  """
-  @enforce_keys [:predicate]
-  defstruct [:predicate, arguments: [], negated: false, key: {}, type: :atom]
-
-  defimpl String.Chars, for: ECompleto.Clauses.Atom do
-    def to_string(atom) do
-      args =
-        atom.arguments
-        |> Enum.map(&(&1 |> String.Chars.to_string()))
-
-      sign =
-        if atom.negated do
-          "-"
-        else
-          ""
-        end
-
-      pred = "#{atom.predicate}"
-
-      f =
-        if pred |> String.starts_with?("http://") or pred |> String.starts_with?("file://") do
-          "#{sign}<#{pred}>"
-        else
-          "#{sign}#{pred}"
-        end
-
-      cond do
-        pred == "=" -> "#{args |> Enum.join(" = ")}"
-        atom.arguments |> length > 0 -> "#{f}(#{args |> Enum.join(", ")})"
-        atom.arguments |> length == 0 -> f
-      end
-    end
-  end
-end
-
-defmodule ECompleto.Clauses.Clause do
-  @doc """
-  Defines a clause. It contains a list of positive literals and a list of negative literals.
-  It also contains some other information to speed up computations, e.g. a list of pairs perdicates/arity in the clause,
-  a frozen (with variables turned into constants) version of the lits of positive, negative literals.
-
-  """
-  defstruct positive: [],
-            negative: [],
-            positive_keys: MapSet.new([]),
-            negative_keys: MapSet.new([]),
-            positive_frozen: [],
-            negative_frozen: [],
-            type: :clause
-
-  defimpl String.Chars, for: ECompleto.Clauses.Clause do
-    def to_string(clause) do
-      args =
-        (clause.positive ++ clause.negative)
-        |> Enum.map(&(&1 |> String.Chars.to_string()))
-        |> Enum.join(", ")
-
-      "[#{args}]"
-    end
-  end
-end
-
 defmodule ECompleto.Clauses do
+  @moduledoc false
   import ECompleto.Unification
   import ECompleto.Unification.Substitutions
   import ECompleto.Terms
+  import Logger
 
   # alias ECompleto.Unification.apply_substitution
+  alias ECompleto.Clauses.{
+    Atom,
+    Clause
+  }
+  alias ECompleto.Terms
+
+  @doc """
+  Creates an literal with its predicate, arguments and the sign (negated or not)
+  ## Example
+      iex(11)> new_literal("a",[new_var("X")])
+      %ECompleto.Clauses.Atom{
+        arguments: [%ECompleto.Terms.Variable{index: 0, name: "X", type: :variable}],
+        key: {"a", 1},
+        negated: false,
+        predicate: "a",
+        type: :atom
+      }
+
+  """
+  @spec new_literal(String.t() | atom(), Terms.terms_list(), boolean()) :: Atom.t()
+  def new_literal(predicate, arguments, negated \\ false) do
+    %Atom{
+      predicate: predicate,
+      arguments: arguments,
+      negated: negated,
+      key: {predicate, arguments |> length}
+    }
+  end
 
   @doc """
   Creates a clause with a list of positive literals and a list of negative literals
+  ## Example
+    iex(15)> c = new_clause([new_literal("a",[new_var("X")])],  [new_literal("a",[new_var("Y")], true)])
+    %ECompleto.Clauses.Clause{
+      negative: [
+        %ECompleto.Clauses.Atom{
+          arguments: [
+            %ECompleto.Terms.Variable{index: 0, name: "Y", type: :variable}
+          ],
+          key: {"a", 1},
+          negated: true,
+          predicate: "a",
+          type: :atom
+        }
+      ],
+      negative_frozen: [
+        %ECompleto.Clauses.Atom{
+          arguments: [
+            %ECompleto.Terms.FTerm{
+              arguments: [],
+              functor: "Y'",
+              skolem: false,
+              type: :term
+            }
+          ],
+          key: {"a", 1},
+          negated: true,
+          predicate: "a",
+          type: :atom
+        }
+      ],
+      negative_keys: #MapSet<[{"a", 1}]>,
+      positive: [
+        %ECompleto.Clauses.Atom{
+          arguments: [
+            %ECompleto.Terms.Variable{index: 0, name: "X", type: :variable}
+          ],
+          key: {"a", 1},
+          negated: false,
+          predicate: "a",
+          type: :atom
+        }
+      ],
+      positive_frozen: [
+        %ECompleto.Clauses.Atom{
+          arguments: [
+            %ECompleto.Terms.FTerm{
+              arguments: [],
+              functor: "X'",
+              skolem: false,
+              type: :term
+            }
+          ],
+          key: {"a", 1},
+          negated: false,
+          predicate: "a",
+          type: :atom
+        }
+      ],
+      positive_keys: #MapSet<[{"a", 1}]>,
+      type: :clause
+      }
+
   """
+  @spec new_clause(Atom.literals(), Atom.literals()) :: Clause.t()
   def new_clause(pliterals, nliterals) do
     p = pliterals |> Enum.uniq()
     n = nliterals |> Enum.uniq()
 
-    %ECompleto.Clauses.Clause{
+    %Clause{
       positive: p,
       positive_frozen: p |> freeze,
       positive_keys: p |> MapSet.new(fn a -> a.key end),
@@ -90,7 +118,8 @@ defmodule ECompleto.Clauses do
   @doc """
   Creates a clause with a list of positive literals and a list of negative literals by splitting the given list.
   """
-  def new_clause(literals) do
+  @spec new_clause_mix(Atom.literals()) :: Clause.t()
+  def new_clause_mix(literals) do
     new_clause(
       literals |> Enum.filter(&is_positive?(&1)),
       literals |> Enum.filter(&is_negative?(&1))
@@ -98,52 +127,64 @@ defmodule ECompleto.Clauses do
   end
 
   @doc """
-  Creates an atom (positive literal) with its predicate and arguments
+  if the clause has only one positive literal or only one negative literal
   """
-  def new_literal(predicate, arguments) do
-    new_literal(predicate, arguments, false)
+  @spec unit_clause?(Clause.t()) :: boolean()
+  def unit_clause?(clause) do
+    case {clause.positive, clause.negative} do
+      {[], [_l]} -> true
+      {[_l], []} -> true
+      _ -> false
+    end
   end
 
   @doc """
-  Creates an literal with its predicate, arguments and the sign (negated or not)
+  if the clause has only negative literals
   """
-  def new_literal(predicate, arguments, negated) do
-    %ECompleto.Clauses.Atom{
-      predicate: predicate,
-      arguments: arguments,
-      negated: negated,
-      key: {predicate, arguments |> length}
-    }
+  @spec constraint_clause?(Clause.t()) :: boolean()
+  def constraint_clause?(clause) do
+    case {clause.positive, clause.negative} do
+      {[], [_l | _rest]} -> true
+      _ -> false
+    end
   end
 
   @doc """
   Tells if a literal is negative.
   """
-  def is_negative?(literal) do
-    Map.get(literal, :negated)
+  @spec is_negative?(Atom.t()) :: boolean()
+  def is_negative?(literal = %Atom{}) do
+    literal.negated
   end
 
   @doc """
   Tells if a literal is positive.
   """
-  def is_positive?(literal) do
-    !is_negative?(literal)
+  @spec is_positive?(Atom.t()) :: boolean()
+  def is_positive?(literal = %Atom{}) do
+    not is_negative?(literal)
   end
 
-  def is_answer_literal(literal) do
-    Map.get(literal, :predicate) == :answer_atom
+  @doc """
+  Tells if a literal is an answer atom, i.e., the predicate is equal to `:answer_atom`.
+  """
+  @spec is_answer_literal(Atom.t()) :: boolean()
+  def is_answer_literal(literal = %Atom{}) do
+    literal.predicate == :answer_atom
   end
 
   @doc """
   Gets the complement of a literal.
   """
+  @spec complement(Atom.t()) :: Atom.t()
   def complement(f) do
-    %{f | negated: !f.negated}
+    %{f | negated: not f.negated}
   end
 
   @doc """
   Turns the variables into constants.
   """
+  @spec freeze(Atom.literals() | Atom.t()) :: Atom.literals() | Atom.t()
   def freeze(literals) do
     literals
     |> ECompleto.Unification.Transform.transform_terms(fn term ->
@@ -152,7 +193,7 @@ defmodule ECompleto.Clauses do
           type = Map.get(term, :type)
 
           if type == :variable do
-            new_term(term.name, [])
+            new_term("#{term.name}'", [])
           else
             term
           end
@@ -166,6 +207,7 @@ defmodule ECompleto.Clauses do
   @doc """
   iterates through the subformulas, terms and subterms of a formula.
   """
+  @spec iterate_subterms(any()) :: any()
   def iterate_subterms(term) when is_list(term) do
     term
     |> Stream.flat_map(fn x -> iterate_subterms(x) end)
@@ -249,7 +291,7 @@ defmodule ECompleto.Clauses do
   @doc """
   Renames the variables of a term with a consecutive index starting from a minimum value specified in fr0.
   """
-  def rename(term, fr0) do
+  def rename(term, fr0 \\ %{}) do
     vars =
       term
       |> iterate_subterms
@@ -276,12 +318,6 @@ defmodule ECompleto.Clauses do
     {rename_aux(maps, term, fr0), fr}
   end
 
-  @doc """
-  Renames the variables of a term with a consecutive index starting from zero.
-  """
-  def rename(term) do
-    rename(term, %{})
-  end
 
   @doc """
   buils a renaming substitution for a term such that the indexes of the variables start from a specified minimum value.
@@ -297,8 +333,7 @@ defmodule ECompleto.Clauses do
     maps =
       vars
       |> Enum.map(fn var ->
-        {var |> String.Chars.to_string(),
-         ECompleto.Terms.new_var(var.name, var.index + (fr0 |> Map.get(var.name)))}
+        {var |> String.Chars.to_string(), ECompleto.Terms.new_var(var.name, var.index + (fr0 |> Map.get(var.name)))}
       end)
 
     Map.new(maps)
@@ -394,6 +429,7 @@ defmodule ECompleto.Clauses do
   should be fine. However, in Chase algorithms we need to ensure that the nulls created have a globally unique
   function symbol.
   """
+  @spec skolemize(Atom.literals(), Atom.literals()) :: Atom.literals()
   def skolemize(head, body) do
     existential_vars =
       head
@@ -478,8 +514,7 @@ defmodule ECompleto.Clauses do
       end)
       |> Stream.filter(fn {_some_literals, {res, _mg_unifier}} -> res end)
       |> Stream.map(fn {some_literals, {_res, mg_unifier}} ->
-        resolvent =
-          apply_substitution((clause1 -- [l | lits]) ++ (clause2 -- some_literals), mg_unifier)
+        resolvent = apply_substitution((clause1 -- [l | lits]) ++ (clause2 -- some_literals), mg_unifier)
 
         {[l | lits], some_literals, mg_unifier, resolvent}
       end)
@@ -508,35 +543,56 @@ defmodule ECompleto.Clauses do
     partial_resolvents(clause1, clause2) ++ partial_resolvents(clause2, clause1)
   end
 
-  def refutations(cnf), do: refutations(cnf, cnf)
-
-  def refutations(cnf, []) do
-    cnf
+  def refutations(cnf, [], [], filter) do
+    Logger.debug("Fix point !!!!!!!!!!!!!")
+    {false, cnf}
   end
 
-  def refutations(cnf, [%{positive: [], negative: []} | _rest]) do
-    cnf
+  def refutations(cnf, [_x | _generated], [], filter) do
+    Logger.debug("Start Resolution Again!!!!!!!!!!!!!")
+    refutations(cnf, [], cnf |> Enum.filter(filter), filter)
   end
 
-  def refutations(cnf, [c1 | rest]) do
+  # def refutations(cnf, [%{positive: [], negative: []} | _rest], filter) do
+  #   cnf
+  # end
+
+  def refutations(cnf, generated, [c1 | rest], filter) do
     res =
       cnf
-      |> Stream.flat_map(&total_resolvents(c1, &1))
-      |> Enum.map(fn e ->
-        # IO.inspect e
-        Kernel.elem(e, 3)
+      |> Enum.flat_map(&total_resolvents(c1, &1))
+      |> Enum.filter(fn c ->
+        cnf
+        |> Enum.all?(fn c2 ->
+          not (c2 |> subsumes(c) and c |> subsumes(c2))
+        end)
       end)
 
-    # IO.inspect cnf
-    # IO.inspect c1
-    # IO.inspect res
-    # IO.puts "----------"
-    if Enum.member?(res, new_clause([])) do
-      cnf ++ res
+    new_generated = generated ++ res
+    Logger.debug("Using #{c1} for resolution")
+    Logger.debug("Using clauses {#{cnf |> Enum.join(", ")}} for resolution")
+    Logger.debug("Generated #{res |> length} resolvents, total #{new_generated |> length}")
+    Logger.debug("Generated {#{res |> Enum.join(", ")}}")
+
+    if Enum.member?(res, new_clause([], [])) do
+      Logger.debug("Empty Clause Found")
+      {true, cnf ++ res}
     else
-      refutations(cnf ++ res, rest ++ res)
+      refutations(cnf ++ res, new_generated, rest ++ (res |> Enum.filter(filter)), filter)
     end
   end
+
+  ## ECompleto.Program.load_program("examples/q_cont.dlgp") |> ECompleto.Program.program_to_cnf |> ECompleto.Clauses.refutations_unit
+
+  def refutations(cnf, filter), do: refutations(cnf, [], cnf |> Enum.filter(filter), filter)
+  def refutations(cnf), do: refutations(cnf, fn _clause -> true end)
+
+  @doc """
+  todo check if factorization is creating all possible unit clauses or not 
+  """
+  def refutations_unit(cnf), do: refutations(cnf, fn clause -> clause |> unit_clause? end)
+
+  def refutations_constraint(cnf), do: refutations(cnf, fn clause -> clause |> constraint_clause? end)
 
   # def factors([]), do: []
 

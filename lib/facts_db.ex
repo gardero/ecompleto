@@ -1,4 +1,5 @@
 defmodule ECompleto.Facts.FactsDB do
+  @moduledoc false
   import ECompleto.Clauses
   import ECompleto.Unification.Substitutions
   import ECompleto.Unification
@@ -16,11 +17,11 @@ defmodule ECompleto.Facts.FactsDB do
   """
   def answer(program = %ECompleto.Program{}) do
     db_name = :temporal_db
-    delete_factsDB(db_name)
-    init_factsDB(db_name)
+    delete_facts_db(db_name)
+    init_facts_db(db_name)
 
     program.facts
-    |> Enum.map(fn r ->
+    |> Enum.each(fn r ->
       %{head: h} = r
       h |> Enum.map(fn a -> add_atom(a, db_name) end)
     end)
@@ -46,14 +47,14 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   creates an ETS table to put facts inside.
   """
-  def init_factsDB(db_name) do
+  def init_facts_db(db_name) do
     :ets.new(db_name, [:bag, :protected, :named_table])
   end
 
   @doc """
   deletes a ETS table.
   """
-  def delete_factsDB(db_name) do
+  def delete_facts_db(db_name) do
     if :ets.whereis(db_name) != :undefined do
       :ets.delete(db_name)
     end
@@ -140,8 +141,8 @@ defmodule ECompleto.Facts.FactsDB do
     b
     |> query_subset_unify(db_name)
     |> Stream.map(fn u ->
-      IO.inspect(cquery.answer_tuple)
-      IO.inspect(u)
+#      IO.inspect(cquery.answer_tuple)
+#      IO.inspect(u)
       cquery.answer_tuple |> apply_substitution(u)
     end)
   end

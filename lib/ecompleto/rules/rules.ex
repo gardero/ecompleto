@@ -4,80 +4,21 @@ import ECompleto.Unification.Substitutions
 import ECompleto.Terms
 require Logger
 
-defmodule ECompleto.Rules.ERule do
-  @doc """
-  Defines an Existential Rule with a body and a head.
-  """
-  defstruct body: [], head: [], clauses: [], type: :erule, alias: ""
-
-  defimpl String.Chars, for: ECompleto.Rules.ERule do
-    def to_string(rule) do
-      abody =
-        rule.body
-        |> Enum.map(&(&1 |> String.Chars.to_string()))
-        |> Enum.join(", ")
-
-      ahead =
-        rule.head
-        |> Enum.map(&(&1 |> String.Chars.to_string()))
-        |> Enum.join(", ")
-
-      if rule.head |> length > 0 do
-        if rule.body |> length > 0 do
-          "#{ahead} :- #{abody}."
-        else
-          "#{ahead}."
-        end
-      else
-        "! :- #{abody}."
-      end
-    end
-  end
-end
-
-defmodule ECompleto.Rules.DERule do
-  @doc """
-  Defines an Existential Rule with a body and a head.
-  """
-  defstruct body: [], head: [], clauses: [], type: :derule, alias: ""
-
-  defimpl String.Chars, for: ECompleto.Rules.DERule do
-    def to_string(rule) do
-      abody =
-        rule.body
-        |> Enum.map(&(&1 |> String.Chars.to_string()))
-        |> Enum.join(", ")
-
-      ahead =
-        rule.head
-        |> Enum.map(fn hi ->
-          thi = hi |> Enum.map(fn l -> "#{l}" end) |> Enum.join(", ")
-
-          if hi |> length > 1 do
-            "(#{thi})"
-          else
-            thi
-          end
-        end)
-        |> Enum.join(", ")
-
-      if rule.head |> length > 0 do
-        "[#{ahead}] :- #{abody}."
-      else
-        "! :- #{abody}."
-      end
-    end
-  end
-end
+alias ECompleto.Rules.{
+  DERule,
+  ERule
+}
+alias ECompleto.Clauses.Atom
 
 defmodule ECompleto.Rules do
-  @doc """
+  @moduledoc """
   creates a new existential rule with a specified head and body.
   """
+  @spec new_erule(Atom.literals(), Atom.literals()) :: ERule.t()
   def new_erule(head, body) do
     head = skolemize(head, body)
     # builds clauses assiated to the rule.
-    b = body |> Enum.map(&complement(&1))
+    b = body |> Enum.map(fn l -> l |> complement end)
 
     c =
       if head |> length > 0 do
@@ -90,7 +31,7 @@ defmodule ECompleto.Rules do
       end
 
     # renames the clauses to ensure they dont share variables.
-    {c, _x} =
+    {c_renamed, _x} =
       Enum.map_reduce(c, %{}, fn ci, frs ->
         # IO.inspect frs
         rename(ci, frs)
@@ -101,7 +42,7 @@ defmodule ECompleto.Rules do
     %ECompleto.Rules.ERule{
       head: head,
       body: body,
-      clauses: c
+      clauses: c_renamed
     }
   end
 
