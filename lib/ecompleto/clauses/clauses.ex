@@ -1,22 +1,24 @@
 defmodule ECompleto.Clauses do
   @moduledoc false
+  import ECompleto.Formulas
+  import ECompleto.Terms
   import ECompleto.Unification
   import ECompleto.Unification.Substitutions
-  import ECompleto.Terms
   import Logger
 
   # alias ECompleto.Unification.apply_substitution
   alias ECompleto.Clauses.{
-    Atom,
+    Literal,
     Clause
   }
+
   alias ECompleto.Terms
 
   @doc """
   Creates an literal with its predicate, arguments and the sign (negated or not)
   ## Example
       iex(11)> new_literal("a",[new_var("X")])
-      %ECompleto.Clauses.Atom{
+      %ECompleto.Clauses.Literal{
         arguments: [%ECompleto.Terms.Variable{index: 0, name: "X", type: :variable}],
         key: {"a", 1},
         negated: false,
@@ -25,9 +27,9 @@ defmodule ECompleto.Clauses do
       }
 
   """
-  @spec new_literal(String.t() | atom(), Terms.terms_list(), boolean()) :: Atom.t()
+  @spec new_literal(String.t() | atom() | binary(), Terms.terms_list(), boolean()) :: Literal.t()
   def new_literal(predicate, arguments, negated \\ false) do
-    %Atom{
+    %Literal{
       predicate: predicate,
       arguments: arguments,
       negated: negated,
@@ -41,7 +43,7 @@ defmodule ECompleto.Clauses do
     iex(15)> c = new_clause([new_literal("a",[new_var("X")])],  [new_literal("a",[new_var("Y")], true)])
     %ECompleto.Clauses.Clause{
       negative: [
-        %ECompleto.Clauses.Atom{
+        %ECompleto.Clauses.Literal{
           arguments: [
             %ECompleto.Terms.Variable{index: 0, name: "Y", type: :variable}
           ],
@@ -52,7 +54,7 @@ defmodule ECompleto.Clauses do
         }
       ],
       negative_frozen: [
-        %ECompleto.Clauses.Atom{
+        %ECompleto.Clauses.Literal{
           arguments: [
             %ECompleto.Terms.FTerm{
               arguments: [],
@@ -69,7 +71,7 @@ defmodule ECompleto.Clauses do
       ],
       negative_keys: #MapSet<[{"a", 1}]>,
       positive: [
-        %ECompleto.Clauses.Atom{
+        %ECompleto.Clauses.Literal{
           arguments: [
             %ECompleto.Terms.Variable{index: 0, name: "X", type: :variable}
           ],
@@ -80,7 +82,7 @@ defmodule ECompleto.Clauses do
         }
       ],
       positive_frozen: [
-        %ECompleto.Clauses.Atom{
+        %ECompleto.Clauses.Literal{
           arguments: [
             %ECompleto.Terms.FTerm{
               arguments: [],
@@ -100,7 +102,7 @@ defmodule ECompleto.Clauses do
       }
 
   """
-  @spec new_clause(Atom.literals(), Atom.literals()) :: Clause.t()
+  @spec new_clause(Literal.literals(), Literal.literals()) :: Clause.t()
   def new_clause(pliterals, nliterals) do
     p = pliterals |> Enum.uniq()
     n = nliterals |> Enum.uniq()
@@ -118,7 +120,7 @@ defmodule ECompleto.Clauses do
   @doc """
   Creates a clause with a list of positive literals and a list of negative literals by splitting the given list.
   """
-  @spec new_clause_mix(Atom.literals()) :: Clause.t()
+  @spec new_clause_mix(Literal.literals()) :: Clause.t()
   def new_clause_mix(literals) do
     new_clause(
       literals |> Enum.filter(&is_positive?(&1)),
@@ -152,206 +154,39 @@ defmodule ECompleto.Clauses do
   @doc """
   Tells if a literal is negative.
   """
-  @spec is_negative?(Atom.t()) :: boolean()
-  def is_negative?(literal = %Atom{}) do
+  @spec is_negative?(Literal.t()) :: boolean()
+  def is_negative?(literal = %Literal{}) do
     literal.negated
   end
 
   @doc """
   Tells if a literal is positive.
   """
-  @spec is_positive?(Atom.t()) :: boolean()
-  def is_positive?(literal = %Atom{}) do
+  @spec is_positive?(Literal.t()) :: boolean()
+  def is_positive?(literal = %Literal{}) do
     not is_negative?(literal)
   end
 
   @doc """
   Tells if a literal is an answer atom, i.e., the predicate is equal to `:answer_atom`.
   """
-  @spec is_answer_literal(Atom.t()) :: boolean()
-  def is_answer_literal(literal = %Atom{}) do
+  @spec is_answer_literal(Literal.t()) :: boolean()
+  def is_answer_literal(literal = %Literal{}) do
     literal.predicate == :answer_atom
   end
 
   @doc """
   Gets the complement of a literal.
   """
-  @spec complement(Atom.t()) :: Atom.t()
+  @spec complement(Literal.t()) :: Literal.t()
   def complement(f) do
     %{f | negated: not f.negated}
   end
 
   @doc """
-  Turns the variables into constants.
-  """
-  @spec freeze(Atom.literals() | Atom.t()) :: Atom.literals() | Atom.t()
-  def freeze(literals) do
-    literals
-    |> ECompleto.Unification.Transform.transform_terms(fn term ->
-      case term do
-        %{} ->
-          type = Map.get(term, :type)
-
-          if type == :variable do
-            new_term("#{term.name}'", [])
-          else
-            term
-          end
-
-        _ ->
-          term
-      end
-    end)
-  end
-
-  @doc """
-  iterates through the subformulas, terms and subterms of a formula.
-  """
-  @spec iterate_subterms(any()) :: any()
-  def iterate_subterms(term) when is_list(term) do
-    term
-    |> Stream.flat_map(fn x -> iterate_subterms(x) end)
-    |> Stream.concat([])
-  end
-
-  def iterate_subterms(term = %{}) do
-    type = Map.get(term, :type)
-    # IO.inspect(type)
-    term_keys =
-      cond do
-        type == :clause -> [:negative, :positive]
-        type in [:atom, :term] -> [:arguments]
-        type in [:erule, :drule] -> [:clauses, :head, :body]
-        type == :cquery -> [:clauses, :answer_tuple, :body]
-        true -> []
-      end
-
-    term_keys
-    |> Stream.flat_map(fn x -> Map.get(term, x) |> iterate_subterms end)
-    |> Stream.concat([term])
-  end
-
-  def iterate_subterms(term) do
-    [term]
-  end
-
-  def rename_aux(maps, term, pos0) do
-    maps
-    |> Enum.reduce(
-      term,
-      fn {k, v}, acc ->
-        {res1, _} =
-          v
-          |> Enum.reduce(
-            {acc, Map.get(pos0, k, 0)},
-            fn i, {acc1, pos} ->
-              {
-                apply_substitution(
-                  acc1,
-                  new_substitution([{new_var(k, i), new_var(k, pos)}])
-                ),
-                pos + 1
-              }
-            end
-          )
-
-        res1
-      end
-    )
-  end
-
-  @doc """
-  computes the maximum indexes that the variables have in a formula.
-  """
-  defp max_indexes(term, initial) do
-    vars =
-      term
-      |> iterate_subterms
-      |> Enum.filter(&(is_map(&1) and Map.get(&1, :type) == :variable))
-      |> Enum.uniq()
-      |> Enum.sort()
-
-    vars
-    |> Enum.group_by(&Map.get(&1, :name), &Map.get(&1, :index))
-    |> Map.new(fn {name, indexes} ->
-      {
-        name,
-        indexes
-        |> Enum.reduce(
-          initial |> Map.get(name, 0),
-          fn x, acc -> max(x + 1, acc) end
-        )
-      }
-    end)
-    |> Map.merge(initial, fn _k, v1, _v2 ->
-      v1
-    end)
-  end
-
-  @doc """
-  Renames the variables of a term with a consecutive index starting from a minimum value specified in fr0.
-  """
-  def rename(term, fr0 \\ %{}) do
-    vars =
-      term
-      |> iterate_subterms
-      |> Enum.filter(&(is_map(&1) and Map.get(&1, :type) == :variable))
-      |> Enum.uniq()
-      |> Enum.sort()
-
-    ## Builds a map with the variable names and the indexes in the term
-    maps =
-      vars
-      |> Enum.group_by(&Map.get(&1, :name), &Map.get(&1, :index))
-
-    ## Builds a map with the variable names and maximum indexes in the resulting renamed term
-    fr =
-      vars
-      |> Enum.frequencies_by(&Map.get(&1, :name))
-      |> Map.new(fn {k, f} ->
-        {k, f + Map.get(fr0, k, 0)}
-      end)
-      |> Map.merge(fr0, fn _k, v1, _v2 ->
-        v1
-      end)
-
-    {rename_aux(maps, term, fr0), fr}
-  end
-
-
-  @doc """
-  buils a renaming substitution for a term such that the indexes of the variables start from a specified minimum value.
-  """
-  def build_renaming(term, fr0) do
-    vars =
-      term
-      |> iterate_subterms
-      |> Enum.filter(&(is_map(&1) and Map.get(&1, :type) == :variable))
-      |> Enum.uniq()
-      |> Enum.sort()
-
-    maps =
-      vars
-      |> Enum.map(fn var ->
-        {var |> String.Chars.to_string(), ECompleto.Terms.new_var(var.name, var.index + (fr0 |> Map.get(var.name)))}
-      end)
-
-    Map.new(maps)
-  end
-
-  @doc """
-  renames two formulas so that they dont share the same variables.
-  """
-  def rename_appart(term1, term2) do
-    fr1 = term1 |> max_indexes(%{})
-    fr1 = term2 |> max_indexes(fr1)
-    renaming = term2 |> build_renaming(fr1)
-    {term1, term2 |> apply_substitution(renaming)}
-  end
-
-  @doc """
   Returns a stream of all the subsets of the list of literals that unify with a specified literal.
   """
+  @spec unifying_literals_stream(Literal.literals(), Literal.t()) :: Enumerable.t()
   defp unifying_literals_stream(literals_list, literal) do
     literals_list
     |> Enum.filter(
@@ -365,6 +200,7 @@ defmodule ECompleto.Clauses do
   @doc """
   Returns a stream of mgus of the literals that unify with a specified literal.
   """
+  @spec unifying_single_literals_stream(Literal.literals(), Literal.t()) :: Enumerable.t()
   defp unifying_single_literals_stream(literals_list, literal) do
     literals_list
     |> Enum.map(fn l -> l |> unify(literal, %{}) end)
@@ -375,6 +211,7 @@ defmodule ECompleto.Clauses do
   @doc """
   Returns a stream of literals and mgu pairs that unify with a specified literal.
   """
+  @spec unifying_single_literals_mgu_stream(Literal.literals(), Literal.t()) :: Enumerable.t()
   def unifying_single_literals_mgu_stream(literals_list, literal) do
     literals_list
     |> Stream.map(fn l -> l |> unify(literal, %{}) end)
@@ -393,6 +230,7 @@ defmodule ECompleto.Clauses do
   @doc """
   unifies the answer literals in a list of literals.
   """
+  @spec unify_answer_literals(Literal.literals()) :: Literal.literals()
   def unify_answer_literals(literals_list) do
     al =
       literals_list
@@ -425,22 +263,22 @@ defmodule ECompleto.Clauses do
 
   @doc """
   Skolemizes the existential variables of a rule by replacing them with unique (local to the rule)
-  Skolem fuctions. As long as we do rewritings with respect to clauses that do not contain Skolem terms this
+  Skolem functions. As long as we do rewritings with respect to clauses that do not contain Skolem terms this
   should be fine. However, in Chase algorithms we need to ensure that the nulls created have a globally unique
   function symbol.
   """
-  @spec skolemize(Atom.literals(), Atom.literals()) :: Atom.literals()
+  @spec skolemize(Literal.literals(), Literal.literals()) :: Literal.literals()
   def skolemize(head, body) do
     existential_vars =
       head
-      |> ECompleto.Clauses.iterate_subterms()
+      |> iterate_subterms()
       |> Enum.filter(&(is_map(&1) and Map.get(&1, :type) == :variable and !contains?(body, &1)))
       |> Enum.sort()
       |> Enum.uniq()
 
     body_vars =
       body
-      |> ECompleto.Clauses.iterate_subterms()
+      |> iterate_subterms()
       |> Enum.filter(&(is_map(&1) and Map.get(&1, :type) == :variable))
       |> Enum.sort()
       |> Enum.uniq()

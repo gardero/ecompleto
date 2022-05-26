@@ -4,10 +4,13 @@ defmodule ECompleto.Facts.FactsDB do
   import ECompleto.Unification.Substitutions
   import ECompleto.Unification
 
-  def test_answer() do
-    p = ECompleto.Program.load_program('examples/facts_queries.dlpg')
+  alias ECompleto.Clauses.Literal
+  alias ECompleto.Program
+  alias ECompleto.Rules.ERule
+  alias ECompleto.Queries.CQuery
 
-    p
+  def test_answer() do
+    Program.load_program('examples/facts_queries.dlpg')
     |> answer
     |> Enum.map(fn x -> x end)
   end
@@ -15,7 +18,8 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   takes a programs and answers all the queries with respect to the facts.
   """
-  def answer(program = %ECompleto.Program{}) do
+  @spec answer(Program.t()) :: Enumerable.t()
+  def answer(program = %Program{}) do
     db_name = :temporal_db
     delete_facts_db(db_name)
     init_facts_db(db_name)
@@ -47,6 +51,7 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   creates an ETS table to put facts inside.
   """
+  @spec init_facts_db(atom()) :: any()
   def init_facts_db(db_name) do
     :ets.new(db_name, [:bag, :protected, :named_table])
   end
@@ -54,6 +59,7 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   deletes a ETS table.
   """
+  @spec delete_facts_db(atom()) :: any()
   def delete_facts_db(db_name) do
     if :ets.whereis(db_name) != :undefined do
       :ets.delete(db_name)
@@ -63,6 +69,7 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   adds an atom belonging to a fact into a facts DB.
   """
+  @spec add_atom(Literal.t(), atom()) :: any()
   def add_atom(atom, db_name) do
     # IO.inspect "Adding #{atom}"
     %{predicate: f, arguments: args} = atom
@@ -72,12 +79,13 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   adds a fact to a facts DB
   """
-  def add_fact(fact, db_name) do
+  @spec add_fact(ERule.t(), atom()) :: any()
+  def add_fact(fact = %ERule{}, db_name) do
     %{head: head} = fact
 
     # do some renaming first
     head
-    |> add_atom(db_name)
+    |> Enum.each(fn l -> l |> add_atom(db_name) end)
   end
 
   @doc """
@@ -101,6 +109,7 @@ defmodule ECompleto.Facts.FactsDB do
   @doc """
   gets the atoms in the DB that unify with a certain query atom.
   """
+  @spec unifying_atoms(Literal.t(), atom()) :: Enumerable.t()
   def unifying_atoms(atom, db_name) do
     %{predicate: f, arguments: args} = atom
     args_pattern = arguments_pattern(args)
@@ -118,6 +127,7 @@ defmodule ECompleto.Facts.FactsDB do
     [u]
   end
 
+  @spec query_subset_unify([Literal.t()], atom(), map()) :: Enumerable.t()
   def query_subset_unify([atom | list_atoms], db_name, u) do
     unifying_atoms(atom, db_name)
     |> Stream.flat_map(fn {_lit, mg_unifier} ->
@@ -127,6 +137,7 @@ defmodule ECompleto.Facts.FactsDB do
     end)
   end
 
+  @spec query_subset_unify([Literal.t()], atom()) :: Enumerable.t()
   def query_subset_unify(list_atoms, db_name) do
     query_subset_unify(list_atoms, db_name, new_substitution())
   end
@@ -135,14 +146,15 @@ defmodule ECompleto.Facts.FactsDB do
   finds all the answer to a query with respect to a DB.
   Returns a collection of answer tupples.
   """
+  @spec answer_cq(CQuery.t(), atom()) :: Enumerable.t()
   def answer_cq(cquery, db_name) do
     %{body: b} = cquery
 
     b
     |> query_subset_unify(db_name)
     |> Stream.map(fn u ->
-#      IO.inspect(cquery.answer_tuple)
-#      IO.inspect(u)
+      #      IO.inspect(cquery.answer_tuple)
+      #      IO.inspect(u)
       cquery.answer_tuple |> apply_substitution(u)
     end)
   end

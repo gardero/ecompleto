@@ -53,14 +53,14 @@ defmodule ECompleto.Unification do
     end
   end
 
-  defimpl ECompleto.Unification.Substitutions, for: ECompleto.Clauses.Atom do
+  defimpl ECompleto.Unification.Substitutions, for: ECompleto.Clauses.Literal do
     def apply_substitution(atom, s) do
       new_arguments = atom.arguments |> ECompleto.Unification.Substitutions.apply_substitution(s)
       %{atom | arguments: new_arguments}
     end
   end
 
-  defimpl ECompleto.Unification.Transform, for: ECompleto.Clauses.Atom do
+  defimpl ECompleto.Unification.Transform, for: ECompleto.Clauses.Literal do
     def transform_terms(atom, function) do
       new_arguments = atom.arguments |> ECompleto.Unification.Transform.transform_terms(function)
       ECompleto.Clauses.new_literal(function.(atom.predicate), new_arguments, atom.negated)

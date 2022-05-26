@@ -1,10 +1,25 @@
 import ECompleto.Clauses
+import ECompleto.Formulas
 
 defmodule ECompleto.Queries.CQuery do
   @moduledoc """
   Defines an Existential Rule with a body and a head.
   """
+
+  alias __MODULE__
+
   defstruct body: [], answer_tuple: [], clauses: [], type: :cquery, alias: ""
+
+  alias ECompleto.Clauses.Literal
+  alias ECompleto.Clauses.Clause
+
+  @type t() :: %CQuery{
+          body: Literal.literals(),
+          answer_tuple: Literal.literals(),
+          clauses: [Clause.t()],
+          type: :cquery,
+          alias: String.t()
+        }
 
   defimpl String.Chars, for: ECompleto.Queries.CQuery do
     def to_string(rule) do

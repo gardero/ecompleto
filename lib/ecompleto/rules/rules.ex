@@ -1,29 +1,37 @@
-import ECompleto.Clauses
-import ECompleto.Unification
-import ECompleto.Unification.Substitutions
-import ECompleto.Terms
-require Logger
-
-alias ECompleto.Rules.{
-  DERule,
-  ERule
-}
-alias ECompleto.Clauses.Atom
-
 defmodule ECompleto.Rules do
   @moduledoc """
   creates a new existential rule with a specified head and body.
   """
-  @spec new_erule(Atom.literals(), Atom.literals()) :: ERule.t()
+
+  import ECompleto.Clauses
+  import ECompleto.Unification
+  import ECompleto.Unification.Substitutions
+  import ECompleto.Terms
+  import ECompleto.Formulas
+
+  require Logger
+
+  alias ECompleto.Clauses.Clause
+  alias ECompleto.Queries.CQuery
+  alias ECompleto.Formulas
+
+  alias ECompleto.Rules.{
+    DERule,
+    ERule
+  }
+
+  alias ECompleto.Clauses.Literal
+
+  @spec new_erule(Literal.literals(), Literal.literals()) :: ERule.t()
   def new_erule(head, body) do
-    head = skolemize(head, body)
+    head_skolemized = skolemize(head, body)
     # builds clauses assiated to the rule.
-    b = body |> Enum.map(fn l -> l |> complement end)
+    b = body |> Enum.map(fn l = %Literal{} -> l |> complement end)
 
     c =
-      if head |> length > 0 do
-        head
-        |> Enum.map(fn hi ->
+      if head_skolemized |> length > 0 do
+        head_skolemized
+        |> Enum.map(fn hi = %Literal{} ->
           new_clause([hi], b)
         end)
       else
@@ -39,8 +47,8 @@ defmodule ECompleto.Rules do
 
     # IO.inspect c |> Enum.map(&(String.Chars.to_string(&1)))
 
-    %ECompleto.Rules.ERule{
-      head: head,
+    %ERule{
+      head: head_skolemized,
       body: body,
       clauses: c_renamed
     }
@@ -49,28 +57,31 @@ defmodule ECompleto.Rules do
   @doc """
   creates a new disjunctive existential rule with a specified head and body.
   """
+  @spec new_derule(Literal.literals(), Literal.literals()) :: DERule.t()
   def new_derule(head, body) do
     head =
       head
       |> Enum.map(fn hi ->
-        skolemize(hi, body)
+        hi |> skolemize(body)
       end)
 
-    # for now we are not building the clase representation.
+    # for now we are not building the clauses representation.
     c = []
 
-    %ECompleto.Rules.DERule{
+    %DERule{
       head: head,
       body: body,
       clauses: c
     }
   end
 
-  def one_step_rewrite(q = %ECompleto.Queries.CQuery{}, rule) do
+  @spec one_step_rewrite(CQuery.t(), ERule.t() | [ERule.t()]) :: [Clause.t()]
+  def one_step_rewrite(q = %CQuery{}, rule) do
     one_step_rewrite(q.clauses |> List.first(), rule)
   end
 
-  def one_step_rewrite(cc, rule = %ECompleto.Rules.ERule{}) do
+  @spec one_step_rewrite(Clause.t(), ERule.t()) :: [Clause.t()]
+  def one_step_rewrite(cc, rule = %ERule{}) do
     # fist we do a fast check to see if the clause contains any of the predicates in the head of the rule.
     if Enum.any?(rule.head, fn a -> a.key in cc.negative_keys end) do
       # we then ansure that the clause does not share a variable with the clauses in or rule.
@@ -100,8 +111,9 @@ defmodule ECompleto.Rules do
   @doc """
   rewrites (one step) a query (or a clause) with respect to a list of existential rules.
   Each rule is used in parallel then the results are combined.
-  The idea here is to use clauses that has no possitive literals.
+  The idea here is to use clauses that has no positive literals.
   """
+  @spec one_step_rewrite(Clause.t(), [ERule.t()]) :: [Clause.t()]
   def one_step_rewrite(cc, rules) when is_list(rules) do
     async_rewrite = fn r ->
       caller = self()
@@ -127,6 +139,14 @@ defmodule ECompleto.Rules do
 
   ## {new_cover, added, removed} = new_cc
   ## |> most_general(ucq)
+  @doc """
+  rewrites (one step) a query (or a clause) with respect to a list of existential rules.
+  Each rule is used in parallel then the results are combined.
+  The idea here is to use clauses that has no positive literals.
+  This version considers a cover of queries (ucq) to remove redundant queries
+  """
+  @spec one_step_rewrite_cover(Clause.t(), [ERule.t()], [Clause.t()]) ::
+          {[Clause.t()], [Clause.t()], [Clause.t()]}
   def one_step_rewrite_cover(cc, rules, ucq) when is_list(rules) do
     async_rewrite = fn r ->
       caller = self()
@@ -204,6 +224,7 @@ defmodule ECompleto.Rules do
   rewrites (one step) a clause with respect to a disjunctive existential rule.
   The idea here is to use clauses that has no possitive literals.
   """
+  @spec one_step_drewrite(Clause.t(), DERule.t()) :: {[ERule.t()], [Formulas.formula()]}
   def one_step_drewrite(cc, rule = %ECompleto.Rules.DERule{}) do
     {rule, cc} = rename_appart(rule, cc)
 

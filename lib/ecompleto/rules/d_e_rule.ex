@@ -5,11 +5,13 @@ defmodule ECompleto.Rules.DERule do
   defstruct body: [], head: [], clauses: [], type: :derule, alias: ""
 
   alias __MODULE__
+  alias ECompleto.Clauses.Clause
+  alias ECompleto.Clauses.Literal
 
   @type t() :: %DERule{
-          body: [],
-          head: [],
-          clauses: [],
+          body: Literal.literals(),
+          head: Literal.literals(),
+          clauses: [Clause.t()],
           type: :derule,
           alias: String.t()
         }

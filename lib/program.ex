@@ -12,13 +12,13 @@ defmodule ECompleto.Program do
             facts: []
 
   @type t() :: %ECompleto.Program{
-          headers: [],
-          body: [],
-          rules: [],
-          disj_rules: [],
-          queries: [],
-          constraints: [],
-          facts: []
+          headers: [any()],
+          body: [any()],
+          rules: [any()],
+          disj_rules: [any()],
+          queries: [any()],
+          constraints: [any()],
+          facts: [any()]
         }
 
   def new_program(headers, body) do

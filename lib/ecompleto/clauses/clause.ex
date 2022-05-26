@@ -15,15 +15,15 @@ defmodule ECompleto.Clauses.Clause do
 
   alias __MODULE__
   alias ECompleto.Terms
-  alias ECompleto.Clauses.Atom
+  alias ECompleto.Clauses.Literal
 
   @type t() :: %Clause{
-          positive: Atom.literals(),
-          negative: Atom.literals(),
+          positive: Literal.literals(),
+          negative: Literal.literals(),
           positive_keys: map(),
           negative_keys: map(),
-          positive_frozen: Atom.literals(),
-          negative_frozen: Atom.literals(),
+          positive_frozen: Literal.literals(),
+          negative_frozen: Literal.literals(),
           type: atom()
         }
 

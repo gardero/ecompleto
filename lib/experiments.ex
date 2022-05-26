@@ -159,13 +159,13 @@ defmodule ECompleto.Experiments do
          |> Map.get(:constraints)
          |> Enum.flat_map(fn q -> q.clauses end))
 
-#    IO.inspect("comp1")
+    #    IO.inspect("comp1")
 
     {_, [], []} =
       p1
       |> Rewriting.most_general_covers(p2)
 
-#    IO.inspect("comp2")
+    #    IO.inspect("comp2")
 
     {_, [], []} =
       p2

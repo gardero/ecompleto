@@ -4,12 +4,13 @@ defmodule ECompleto.Rules.ERule do
   """
   defstruct body: [], head: [], clauses: [], type: :erule, alias: ""
   alias __MODULE__
-  alias ECompleto.Clauses.Atom
+  alias ECompleto.Clauses.Literal
+  alias ECompleto.Clauses.Clause
 
   @type t() :: %ERule{
-          body: Atom.literals(),
-          head: Atom.literals(),
-          clauses: [] | [ECompleto.Clauses.Clause.t()],
+          body: Literal.literals(),
+          head: Literal.literals(),
+          clauses: [Clause.t()],
           type: :erule,
           alias: String.t()
         }

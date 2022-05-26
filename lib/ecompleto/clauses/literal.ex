@@ -1,4 +1,4 @@
-defmodule ECompleto.Clauses.Atom do
+defmodule ECompleto.Clauses.Literal do
   @moduledoc """
   Defines an atom (positive or negated) with a predicate and a list of arguments.
   """
@@ -7,7 +7,7 @@ defmodule ECompleto.Clauses.Atom do
   alias __MODULE__
   alias ECompleto.Terms
 
-  @type t() :: %Atom{
+  @type t() :: %Literal{
           predicate: String.t() | atom(),
           arguments: Terms.terms_list(),
           negated: boolean(),
@@ -15,9 +15,9 @@ defmodule ECompleto.Clauses.Atom do
           type: :atom
         }
 
-  @type literals() :: [] | Atom.t()
+  @type literals() :: [Literal.t()] | Enumerable.t()
 
-  defimpl String.Chars, for: Atom do
+  defimpl String.Chars, for: Literal do
     def to_string(atom) do
       args =
         atom.arguments
