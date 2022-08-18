@@ -1,5 +1,7 @@
 # ECompleto
 
+ECompleto is a query rewriting system that supports queries with universally cuantified negation and ontologies with disjunctive existential rules. It Provides a UCQ rewriting that can be used to find all the answer of the input query with respect to the rules in the ontology.
+
 ## Running
 
 From bash:
