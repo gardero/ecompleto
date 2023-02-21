@@ -148,7 +148,7 @@ defmodule ECompleto.Formulas do
         type = Map.get(term, :type)
 
         if type == :variable do
-          new_term("#{term.name}'", [])
+          new_term("#{term}'", [])
         else
           term
         end

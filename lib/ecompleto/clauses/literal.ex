@@ -33,7 +33,9 @@ defmodule ECompleto.Clauses.Literal do
       pred = "#{atom.predicate}"
 
       f =
-        if pred |> String.starts_with?("http://") or pred |> String.starts_with?("file://") do
+        if pred |> String.starts_with?("http://") or
+             pred |> String.starts_with?("file://") or
+             pred |> String.match?(~r/^[A-Z]/) do
           "#{sign}<#{pred}>"
         else
           "#{sign}#{pred}"

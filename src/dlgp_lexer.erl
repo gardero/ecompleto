@@ -33,6 +33,7 @@ decimal(TokenChars)  -> 'Elixir.RDF.Serialization.ParseHelper':decimal(TokenChar
 double(TokenChars)   -> 'Elixir.RDF.Serialization.ParseHelper':double(TokenChars).
 boolean(TokenChars)  -> 'Elixir.RDF.Serialization.ParseHelper':boolean(TokenChars).
 quoted_content_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':quoted_content_str(TokenChars).
+string_normal(TokenChars) -> 'Elixir.List':to_string(TokenChars).
 long_quoted_content_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':long_quoted_content_str(TokenChars).
 % bnode_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':bnode_str(TokenChars).
 langtag_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':langtag_str(TokenChars).
@@ -329,7 +330,7 @@ adjust_line(T, A, [_|Cs], L) ->
 %% return signal either an unrecognised character or end of current
 %% input.
 
--file("src/dlgp_lexer.erl", 332).
+-file("src/dlgp_lexer.erl", 333).
 yystate() -> 115.
 
 yystate(178, [C|Ics], Line, Tlen, Action, Alen) when C >= 48, C =< 57 ->
@@ -2979,12 +2980,12 @@ yyaction_32(TokenChars, TokenLine) ->
 -compile({inline,yyaction_33/2}).
 -file("src/dlgp_lexer.xrl", 109).
 yyaction_33(TokenChars, TokenLine) ->
-     { token, { u_ident, TokenLine, TokenChars } } .
+     { token, { u_ident, TokenLine, string_normal (TokenChars) } } .
 
 -compile({inline,yyaction_34/2}).
 -file("src/dlgp_lexer.xrl", 110).
 yyaction_34(TokenChars, TokenLine) ->
-     { token, { l_ident, TokenLine, TokenChars } } .
+     { token, { l_ident, TokenLine, string_normal (TokenChars) } } .
 
 -compile({inline,yyaction_35/2}).
 -file("src/dlgp_lexer.xrl", 112).

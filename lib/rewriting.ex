@@ -27,11 +27,17 @@ defmodule ECompleto.Rewriting do
 
   def erewrite(program = %ECompleto.Program{}) do
     # ++ (program.constraints |> Enum.flat_map(&(&1.clauses)))
-    {constraint_clauses, _, _} =
-      program.queries
-      |> Enum.flat_map(& &1.clauses)
-      |> most_general([])
+    #    {constraint_clauses, _, _} =
+    #      ((program.queries |> Enum.flat_map(& &1.clauses)) ++
+    #         (program.constraints |> Enum.flat_map(& &1.clauses)))
+    #      |> most_general([])
 
+    constraint_clauses =
+      (program.queries |> Enum.flat_map(& &1.clauses)) ++
+        (program.constraints |> Enum.flat_map(& &1.clauses))
+
+    Logger.info("CQs #{constraint_clauses |> Enum.map_join(", ", &"#{&1}")}")
+    Logger.info("Rules #{program.rules |> Enum.map_join(", ", &"#{&1}")}")
     rewrite_queue(constraint_clauses, constraint_clauses, program.rules)
   end
 
@@ -52,9 +58,10 @@ defmodule ECompleto.Rewriting do
   end
 
   def rewrite_queue([cc | queue], ucq, rules) do
+    #    Logger.debug("Expanding CQ #{cc}")
     {new_cover, added, removed} = cc |> one_step_rewrite_cover(rules, ucq)
-    {ucq, queue} = {new_cover, (queue -- removed) ++ added}
-    rewrite_queue(queue, ucq, rules)
+    queue2 = (queue -- removed) ++ added
+    rewrite_queue(queue2, new_cover, rules)
   end
 
   def rewrite_queue_one_step(_, new_queue, ucq, []) do
@@ -66,17 +73,47 @@ defmodule ECompleto.Rewriting do
   end
 
   def rewrite_queue_one_step([cc | queue], new_queue, ucq, rules) do
+    Logger.info("Rewrite 1 with #{rules |> length} rules")
     new_cc = cc |> one_step_rewrite(rules)
-    # IO.inspect("COVER #{ucq |> length}+#{new_cc|> length}")
+    Logger.info("COVER #{ucq |> length}+#{new_cc |> length}")
+
     {new_cover, added, removed} =
       new_cc
       |> most_general(ucq)
 
-    # IO.inspect("NEW COVER #{new_cover |> length}+#{added|> length}-#{removed |> length}")
+    Logger.info("COVER #{ucq |> length}+#{new_cc |> length}")
     ucq = new_cover
     queue = queue -- removed
     new_queue = (new_queue -- removed) ++ added
     rewrite_queue_one_step(queue, new_queue, ucq, rules)
+  end
+
+  def rewrite_queue_one_step_new(queue, new_queue, ucq, rules) do
+    Logger.info("Rewrite #{queue |> length} with #{rules |> length} rules")
+
+    new_cc =
+      queue
+      |> Enum.flat_map(fn cc ->
+        # Logger.debug("Rewrite #{cc}")
+        cc |> one_step_rewrite(rules)
+      end)
+
+    Logger.info("COVER #{ucq |> length}+#{new_cc |> length}")
+
+    {new_cover, added, removed} =
+      new_cc
+      |> most_general(ucq)
+
+    Logger.info("NEW COVER #{new_cover |> length} of those +#{added |> length}-#{removed |> length}")
+
+    if added |> length > 0 do
+      Logger.debug("New CQs #{added |> Enum.map_join(", ", &"#{&1}")}")
+    end
+
+    ucq = new_cover
+    queue = queue -- removed
+    new_queue = (new_queue -- removed) ++ added
+    rewrite_queue_one_step([], new_queue, ucq, rules)
   end
 
   def rewrite_async_queue_one_step(queue, new_queue, ucq, rules) do
@@ -131,6 +168,7 @@ defmodule ECompleto.Rewriting do
         cc |> one_step_rewrite(rules)
       end)
 
+    Logger.info("Computing Cover for  CQs -> #{new_cc |> length}")
     {new_cc, _, _} = new_cc |> most_general([])
     Logger.info("New CQs -> #{new_cc |> length}")
     Logger.debug("New CQs #{new_cc |> Enum.map_join(", ", &"#{&1}")}")
@@ -172,22 +210,30 @@ defmodule ECompleto.Rewriting do
     end
   end
 
-  def rewrite_disj_queue(queue, ucq, rules, new_rules, drules) do
-    # Logger.info("STEP ==> CQs #{ucq|> length}")
+  def rewrite_disj_queue(queue, ucq, erules, new_erules, drules) do
+    Logger.info("STEP ==> CQs #{ucq |> length}")
 
     ## new rules should be used in the ucq
 
     # {ucq, new_cq1} = rewrite_async_queue_one_step(ucq, queue, ucq, new_rules)
     # {ucq, new_cq} = rewrite_async_queue_one_step(new_cq1,[], ucq, rules++new_rules)
-    {ucq, new_cq1} = rewrite_queue_one_step(ucq, queue, ucq, new_rules)
-    {ucq, new_cq} = rewrite_queue_one_step(new_cq1, [], ucq, rules ++ new_rules)
+    {ucq, new_cq1} = rewrite_queue_one_step(ucq, queue, ucq, new_erules)
+    {ucq, new_cq} = rewrite_queue_one_step(new_cq1, [], ucq, erules ++ new_erules)
 
     new_cq2 = new_cq ++ new_cq1
 
+    Logger.info("New CQs #{new_cq |> length}")
+
+    if new_cq |> length > 0 do
+      Logger.debug("New CQs #{new_cq |> Enum.map_join(", ", &"#{&1}")}")
+    end
+
+    Logger.info("Rewriting DER 1")
     ## take the new CQs and rewrite all the existing disj rules
     {new_er, new_dr} = rewrite_derules(new_cq2, drules, new_cq2, [], [])
     Logger.debug("Produced ERs #{new_er |> length}, DERs #{new_dr |> length}")
     ## take the new disj rules and rewrite them using all the CQs
+    Logger.info("Rewriting DER 2")
     {new_er, new_dr} = rewrite_derules(ucq, new_dr, ucq, new_er, new_dr)
     ## this will have generated new_er and new_dr
     if (new_cq |> length) + (new_dr |> length) + (new_er |> length) > 0 do
@@ -201,7 +247,11 @@ defmodule ECompleto.Rewriting do
         Logger.debug("New DERs #{new_dr |> Enum.map_join(", ", &"#{&1}")}")
       end
 
-      rewrite_disj_queue(new_cq, ucq, rules ++ new_rules, new_er, drules ++ new_dr)
+      if new_dr |> length > 0 do
+        Logger.debug("New DERs #{new_dr |> Enum.map_join(", ", &"#{&1}")}")
+      end
+
+      rewrite_disj_queue(new_cq, ucq, erules ++ new_erules, new_er, drules ++ new_dr)
     else
       ucq
     end
@@ -237,7 +287,7 @@ defmodule ECompleto.Rewriting do
 
   ### Do all this in parallel
 
-  # defp comparation_groups(list, cc1) do
+  # defp comparison_groups(list, cc1) do
   #   list |> Enum.group_by(fn ccx ->
   #     two = (ccx |> subsumes(cc1))
   #     cond do
@@ -267,11 +317,21 @@ defmodule ECompleto.Rewriting do
     end
   end
 
+  def compare_new(clause2, clause1) do
+    one = clause1 |> subsumes(clause2)
+    #    IO.inspect "c1 subsumes c2 = #{one}"
+    cond do
+      one -> :subsumed
+      clause2 |> subsumes(clause1) -> :more_general
+      true -> :different
+    end
+  end
+
   @doc """
   performs in parallel the comparison of a list of clauses with respect to a clause.
   it gives a list of those that are more general, subsumed or different.
   """
-  defp comparation_groups(list, cc1) do
+  defp comparison_groups(list, cc1) do
     async_compare = fn ccx ->
       caller = self()
 
@@ -296,7 +356,7 @@ defmodule ECompleto.Rewriting do
     )
   end
 
-  defp comparation_groups4(list, cc1) do
+  defp comparison_groups4(list, cc1) do
     subsumed = list |> Enum.any?(fn c -> subsumes(c, cc1) end)
 
     if subsumed do
@@ -336,7 +396,7 @@ defmodule ECompleto.Rewriting do
     end
   end
 
-  defp comparation_groups1(list, cc1) do
+  defp comparison_groups1(list, cc1) do
     subsumed =
       list
       |> Task.async_stream(fn c -> subsumes(c, cc1) end)
@@ -380,7 +440,7 @@ defmodule ECompleto.Rewriting do
     end
   end
 
-  defp comparation_groups11(list, cc1) do
+  defp comparison_groups11(list, cc1) do
     async_compare = fn ccx ->
       caller = self()
 
@@ -406,7 +466,7 @@ defmodule ECompleto.Rewriting do
     )
   end
 
-  defp comparation_groups3(list, cc1) do
+  defp comparison_groups3(list, cc1) do
     list
     |> Stream.map(fn c -> {compare(c, cc1), c} end)
     |> Stream.take_while(fn {cmp, _cc} -> cmp != :more_general end)
@@ -453,7 +513,7 @@ defmodule ECompleto.Rewriting do
   #   {cover_new, added, removed}= cc_rest |> most_general(cover_old)
 
   #   groups= cover_new
-  #     |> comparation_groups(cc1)
+  #     |> comparison_groups(cc1)
   #   cover_r = Map.get(groups, :different, []) ++  Map.get(groups, :more_general, [])
   #   rem1 = Map.get(groups, :subsumed, [])
 
@@ -478,7 +538,7 @@ defmodule ECompleto.Rewriting do
 
     groups =
       cover_new
-      |> comparation_groups(cc1)
+      |> comparison_groups(cc1)
 
     cover_r = Map.get(groups, :different, []) ++ Map.get(groups, :more_general, [])
     rem1 = Map.get(groups, :subsumed, [])
@@ -503,27 +563,32 @@ defmodule ECompleto.Rewriting do
 
     groups =
       (cover_new -- added)
-      |> comparation_groups(cc1)
+      |> comparison_groups(cc1)
 
     cover_r = Map.get(groups, :different, []) ++ Map.get(groups, :more_general, [])
     rem1 = Map.get(groups, :subsumed, [])
 
-    # IO.puts "not subsumed"
-    # IO.puts cover_r |> Enum.map(&("#{&1}"))
-    # IO.puts "subsumed"
-    # IO.puts rem1 |> Enum.map(&("#{&1}"))
+    #     IO.puts "cc"
+    #     IO.puts cc1
+    #     IO.puts "different"
+    #     IO.puts Map.get(groups, :different, []) |> Enum.map(&("#{&1}"))
+    #     IO.puts "more general"
+    #     IO.puts Map.get(groups, :more_general, []) |> Enum.map(&("#{&1}"))
+    #     IO.puts "subsumed"
+    #     IO.puts rem1 |> Enum.map(&("#{&1}"))
 
-    if cover_r |> length < cover_new |> length do
-      {[cc1 | cover_r], [cc1 | added] -- rem1, removed ++ rem1}
+    #    if cover_r |> length < cover_new |> length do
+    #      {[cc1 | cover_r], [cc1 | added] -- rem1, removed ++ rem1}
+    #    else
+    #      # any = cover_new |> Enum.any?(fn ccx ->
+    #      #   ccx |> subsumes(cc1)
+    #      # end)
+    if Map.get(groups, :more_general, []) |> length > 0 do
+      {cover_new, added, removed}
     else
-      # any = cover_new |> Enum.any?(fn ccx ->
-      #   ccx |> subsumes(cc1)
-      # end)
-      if Map.get(groups, :more_general, []) |> length > 0 do
-        {cover_new, added, removed}
-      else
-        {[cc1 | cover_new], [cc1 | added], removed}
-      end
+      {[cc1 | cover_new], [cc1 | added], removed}
     end
+
+    #    end
   end
 end

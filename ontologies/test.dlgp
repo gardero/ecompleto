@@ -1,0 +1,4 @@
+
+!:- headOf(X3_63, X0_127), worksFor(X0_127, X3_56).
+!:- worksFor(X3_63, X0_127), headOf(X0_127, X3_56).
+ 

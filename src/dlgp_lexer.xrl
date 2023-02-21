@@ -108,8 +108,8 @@ Rules.
 {PNAME_NS}                         : {token, {prefix_ns, TokenLine, prefix_ns(TokenChars)}}.
 {PNAME_LN}                         : {token, {prefix_ln, TokenLine, prefix_ln(TokenChars)}}.
 
-{U_IDENT} : {token, {u_ident, TokenLine, TokenChars}}.
-{L_IDENT} : {token, {l_ident, TokenLine, TokenChars}}.
+{U_IDENT} : {token, {u_ident, TokenLine, string_normal(TokenChars)}}.
+{L_IDENT} : {token, {l_ident, TokenLine, string_normal(TokenChars)}}.
 
 \"{NORMAL_STRING}\"               : {token, {double_quoted_string, TokenLine, string:trim(TokenChars, both, "\"")}}.
 
@@ -143,6 +143,7 @@ decimal(TokenChars)  -> 'Elixir.RDF.Serialization.ParseHelper':decimal(TokenChar
 double(TokenChars)   -> 'Elixir.RDF.Serialization.ParseHelper':double(TokenChars).
 boolean(TokenChars)  -> 'Elixir.RDF.Serialization.ParseHelper':boolean(TokenChars).
 quoted_content_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':quoted_content_str(TokenChars).
+string_normal(TokenChars) -> 'Elixir.List':to_string(TokenChars).
 long_quoted_content_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':long_quoted_content_str(TokenChars).
 % bnode_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':bnode_str(TokenChars).
 langtag_str(TokenChars) -> 'Elixir.RDF.Serialization.ParseHelper':langtag_str(TokenChars).

@@ -165,6 +165,7 @@ defmodule ECompleto.Rules do
     rules
     |> Enum.map(&async_rewrite.(&1))
     |> Enum.map(fn _ -> get_result.() end)
+    |> Enum.filter(fn l -> not (l |> Enum.empty?()) end)
     |> Enum.reduce({ucq, [], []}, fn rw, {new_cover, added, removed} ->
       {new_cover1, added1, removed1} =
         rw
@@ -222,16 +223,16 @@ defmodule ECompleto.Rules do
 
   @doc """
   rewrites (one step) a clause with respect to a disjunctive existential rule.
-  The idea here is to use clauses that has no possitive literals.
+  The idea here is to use clauses that has no positive literals.
   """
   @spec one_step_drewrite(Clause.t(), DERule.t()) :: {[ERule.t()], [Formulas.formula()]}
   def one_step_drewrite(cc, rule = %ECompleto.Rules.DERule{}) do
     {rule, cc} = rename_appart(rule, cc)
 
-    Logger.debug("Using CC #{cc}")
-    Logger.debug("Rewrite DER #{rule}")
+    # Logger.debug("Using CC #{cc}")
+    # Logger.debug("Rewrite DER #{rule}")
 
-    ## IMPORTANT CC has no possitive part
+    ## IMPORTANT CC has no positive part
 
     rw =
       rule.head

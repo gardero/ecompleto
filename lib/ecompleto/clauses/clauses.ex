@@ -301,9 +301,13 @@ defmodule ECompleto.Clauses do
   def subsumes(clause1, clause2) do
     if clause1.positive_keys |> MapSet.subset?(clause2.positive_keys) and
          clause1.negative_keys |> MapSet.subset?(clause2.negative_keys) do
+      # IO.inspect "check deeper"
       subset_unify(clause1.positive, clause2.positive_frozen) and
         subset_unify(clause1.negative, clause2.negative_frozen)
     else
+      #      IO.inspect "mismatching preds"
+      #      IO.inspect clause1.negative_keys
+      #      IO.inspect clause2.negative_keys
       false
     end
   end

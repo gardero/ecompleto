@@ -32,7 +32,7 @@ defmodule ECompleto.Experiments do
   end
 
   @doc """
-  Given a program and a query. The  UCQ rewriting of that query is found.
+  Given a program and a query. The  UCQ rewriting of that query is found using only the existential rules.
   """
   @spec erewrite(String.t(), String.t(), non_neg_integer()) :: Program.t()
   def erewrite(program_file, queries_file, index) do
@@ -130,10 +130,28 @@ defmodule ECompleto.Experiments do
   #   Logger.info("It took #{:os.system_time(:millisecond)-t0} ms")
   #   res
   # end
+  @doc """
+  rewrites the queries of an ontology using the rules.
+  """
   @spec rewrite(String.t()) :: [...]
   def rewrite(program_file) do
     p = Program.load_program(program_file)
-    p |> Rewriting.rewrite()
+
+    p
+    |> Rewriting.rewrite()
+    |> Program.to_program(p.headers)
+  end
+
+  @doc """
+  rewrites the queries of an ontology using only the existential rules.
+  """
+  @spec erewrite(String.t()) :: [...]
+  def erewrite(program_file) do
+    p = Program.load_program(program_file)
+
+    p
+    |> Rewriting.erewrite()
+    |> Program.to_program(p.headers)
   end
 
   def to_file(lines, file_name) do
@@ -161,18 +179,63 @@ defmodule ECompleto.Experiments do
 
     #    IO.inspect("comp1")
 
-    {_, [], []} =
+    {ucq1, add1, rem1} =
       p1
       |> Rewriting.most_general_covers(p2)
 
+    Logger.debug("COVER1 #{ucq1 |> length}")
+    Logger.debug("Add1 #{add1 |> length} i.e. ")
+
+    if add1 |> length > 0 do
+      #      Logger.debug("New CQs #{added |> Enum.map_join(", ", &"#{&1}")}")
+      add1
+      |> Enum.each(fn c ->
+        Logger.debug("adding CQ #{c}")
+      end)
+    end
+
+    Logger.debug("Rem1 #{rem1 |> Enum.map_join(", ", &"#{&1}")}")
     #    IO.inspect("comp2")
 
-    {_, [], []} =
+    {ucq2, add2, rem2} =
       p2
       |> Rewriting.most_general_covers(p1)
 
+    Logger.debug("COVER2 #{ucq2 |> length}")
+    Logger.debug("Add2 #{add2 |> length} i.e.")
+
+    if add2 |> length > 0 do
+      #      Logger.debug("New CQs #{added |> Enum.map_join(", ", &"#{&1}")}")
+      add2
+      |> Enum.each(fn c ->
+        Logger.debug("adding CQ #{c}")
+      end)
+    end
+
+    Logger.debug("Rem2 #{rem2 |> Enum.map_join(", ", &"#{&1}")}")
     # end
-    true
+    add1 == [] and rem1 == [] and add2 == [] and rem2 == []
+  end
+
+  @doc """
+  computes the cover of the queries and constraints in an ontology.
+  """
+  def cover(file1) do
+    # profile do
+    p = Program.load_program(file1)
+
+    p1 =
+      (p
+       |> Map.get(:queries)
+       |> Enum.flat_map(fn q -> q.clauses end)) ++
+        (p
+         |> Map.get(:constraints)
+         |> Enum.flat_map(fn q -> q.clauses end))
+
+    Logger.info("loaded...")
+
+    p1
+    |> Rewriting.most_general([])
   end
 end
 

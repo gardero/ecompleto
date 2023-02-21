@@ -5,9 +5,24 @@
       <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/rdf/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/rdf/lib" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/src" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/priv" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/lib" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/src" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/priv" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/lib" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/src" />
+      <root url="file://$PROJECT_DIR$/deps/rdf/priv" />
       <root url="file://$PROJECT_DIR$/deps/rdf/lib" />
       <root url="file://$PROJECT_DIR$/deps/rdf/src" />
       <root url="file://$PROJECT_DIR$/deps/rdf/priv" />

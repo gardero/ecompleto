@@ -1,5 +1,5 @@
-? (X) :- <http://www.owl-ontologies.com/travel.owl#Organization>(X), -<http://www.owl-ontologies.com/travel.owl#headOf>(Y,X), -<http://www.owl-ontologies.com/travel.owl#Department>(X).
-? (X) :- <http://www.owl-ontologies.com/travel.owl#Person>(X), -<http://www.owl-ontologies.com/travel.owl#Faculty>(X), -<http://www.owl-ontologies.com/travel.owl#headOf>(X,Y).
-? (X) :- <http://www.owl-ontologies.com/travel.owl#Person>(X), <http://www.owl-ontologies.com/travel.owl#Faculty>(X), <http://www.owl-ontologies.com/travel.owl#takesCourse>(X,Y).
-? (X) :- <http://www.owl-ontologies.com/travel.owl#Publication>(X), -<http://www.owl-ontologies.com/travel.owl#TechnicalReport>(X).
-? (Y) :- <http://www.owl-ontologies.com/travel.owl#Work>(Y), -<http://www.owl-ontologies.com/travel.owl#takesCourse>(X,Y).
+? (X) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Organization>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y,X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
+? (X) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X,Y).
+? (X) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Person>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse>(X,Y).
+? (X) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#TechnicalReport>(X).
+? (Y) :- <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Work>(Y), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#takesCourse>(X,Y).

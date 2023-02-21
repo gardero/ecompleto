@@ -5,9 +5,18 @@
       <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/credo/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/credo/lib" />
+      <root url="file://$PROJECT_DIR$/deps/credo/lib" />
+      <root url="file://$PROJECT_DIR$/deps/credo/lib" />
       <root url="file://$PROJECT_DIR$/deps/credo/lib" />
       <root url="file://$PROJECT_DIR$/deps/credo/lib" />
     </SOURCES>

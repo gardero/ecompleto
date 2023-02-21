@@ -33,7 +33,6 @@ defmodule ECompleto.Rules.DERule do
             thi
           end
         end)
-        |> Enum.join(", ")
 
       if rule.head |> length > 0 do
         "[#{ahead}] :- #{abody}."

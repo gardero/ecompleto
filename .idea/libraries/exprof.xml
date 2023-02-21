@@ -5,9 +5,18 @@
       <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
       <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
+      <root url="file://$PROJECT_DIR$/_build/dev/lib/exprof/ebin" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/exprof/lib" />
+      <root url="file://$PROJECT_DIR$/deps/exprof/lib" />
+      <root url="file://$PROJECT_DIR$/deps/exprof/lib" />
       <root url="file://$PROJECT_DIR$/deps/exprof/lib" />
       <root url="file://$PROJECT_DIR$/deps/exprof/lib" />
     </SOURCES>
