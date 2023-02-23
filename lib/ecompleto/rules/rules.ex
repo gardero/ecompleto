@@ -25,7 +25,7 @@ defmodule ECompleto.Rules do
   @spec new_erule(Literal.literals(), Literal.literals()) :: ERule.t()
   def new_erule(head, body) do
     head_skolemized = skolemize(head, body)
-    # builds clauses assiated to the rule.
+    # builds clauses associated to the rule.
     b = body |> Enum.map(fn l = %Literal{} -> l |> complement end)
 
     c =
@@ -38,7 +38,7 @@ defmodule ECompleto.Rules do
         [new_clause([], b)]
       end
 
-    # renames the clauses to ensure they dont share variables.
+    # renames the clauses to ensure they don't share variables.
     {c_renamed, _x} =
       Enum.map_reduce(c, %{}, fn ci, frs ->
         # IO.inspect frs

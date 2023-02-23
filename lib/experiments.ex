@@ -218,6 +218,62 @@ defmodule ECompleto.Experiments do
   end
 
   @doc """
+  compares the clauses of existential rules for subsumption.
+  """
+
+  def compare_rules(file1, file2) do
+    # profile do
+    p1 =
+      (Program.load_program(file1)
+       |> Map.get(:rules)
+       |> Enum.flat_map(fn q -> q.clauses end))
+
+    p2 =
+      (Program.load_program(file2)
+       |> Map.get(:rules)
+       |> Enum.flat_map(fn q -> q.clauses end))
+
+    #    IO.inspect("comp1")
+
+    {ucq1, add1, rem1} =
+      p1
+      |> Rewriting.most_general_covers(p2)
+
+    Logger.debug("COVER1 #{ucq1 |> length}")
+    Logger.debug("Add1 #{add1 |> length} i.e. ")
+
+    if add1 |> length > 0 do
+      #      Logger.debug("New CQs #{added |> Enum.map_join(", ", &"#{&1}")}")
+      add1
+      |> Enum.each(fn c ->
+        Logger.debug("adding CQ #{c}")
+      end)
+    end
+
+    Logger.debug("Rem1 #{rem1 |> Enum.map_join(", ", &"#{&1}")}")
+    #    IO.inspect("comp2")
+
+    {ucq2, add2, rem2} =
+      p2
+      |> Rewriting.most_general_covers(p1)
+
+    Logger.debug("COVER2 #{ucq2 |> length}")
+    Logger.debug("Add2 #{add2 |> length} i.e.")
+
+    if add2 |> length > 0 do
+      #      Logger.debug("New CQs #{added |> Enum.map_join(", ", &"#{&1}")}")
+      add2
+      |> Enum.each(fn c ->
+        Logger.debug("adding CQ #{c}")
+      end)
+    end
+
+    Logger.debug("Rem2 #{rem2 |> Enum.map_join(", ", &"#{&1}")}")
+    # end
+    add1 == [] and rem1 == [] and add2 == [] and rem2 == []
+  end
+
+  @doc """
   computes the cover of the queries and constraints in an ontology.
   """
   def cover(file1) do

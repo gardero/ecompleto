@@ -1,500 +1,500 @@
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Department>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(X, Z), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#headOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#member>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#memberOf>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#subOrganizationOf>(Z, X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(Y, X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Publication>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#ResearchGroup>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#publicationAuthor>(X, Y).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssistantProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Professor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#AssociateProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#advisor>(Z, X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Lecturer>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Faculty>(X), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#teacherOf>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#mastersDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#doctoralDegreeFrom>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X).
-? (X) :- -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#Chair>(X), -<http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#worksFor>(X, Z), <http://www.lehigh.edu/~zhp2/2004/0401/univ-bench.owl#FullProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<Lecturer>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<Lecturer>(X), <headOf>(X, Y).
+? (X) :- -<headOf>(Z, X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<Department>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(Z, X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Department>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<Department>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<member>(X, Z), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<Department>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<member>(X, Z), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<Department>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<memberOf>(Z, X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Department>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<member>(X, Z), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(Z, X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<member>(X, Z), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(Z, X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<memberOf>(Z, X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<memberOf>(Z, X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<member>(X, Z), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<member>(X, Z), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<Lecturer>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<AssistantProfessor>(X), <headOf>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<AssistantProfessor>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<AssociateProfessor>(X), <headOf>(X, Y).
+? (X) :- -<Lecturer>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<Lecturer>(X), <headOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<Lecturer>(X), <member>(X, Y).
+? (X) :- -<Lecturer>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<Lecturer>(X), <memberOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<Lecturer>(X), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<Lecturer>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<Lecturer>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<Lecturer>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Department>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<Department>(X), <headOf>(X, Y).
+? (X) :- -<Chair>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Chair>(X), -<Department>(X), <headOf>(Y, X).
+? (X) :- -<Chair>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Chair>(X), -<Department>(X), <member>(X, Y).
+? (X) :- -<Chair>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Chair>(X), -<Department>(X), <memberOf>(Y, X).
+? (X) :- -<Chair>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Chair>(X), -<Department>(X), <worksFor>(Y, X).
+? (X) :- -<headOf>(X, Z), -<headOf>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<headOf>(Z, X), <headOf>(X, Y).
+? (X) :- -<headOf>(X, Z), -<member>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<member>(X, Z), <headOf>(X, Y).
+? (X) :- -<headOf>(X, Z), -<memberOf>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<memberOf>(Z, X), <headOf>(X, Y).
+? (X) :- -<headOf>(X, Z), -<worksFor>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<worksFor>(Z, X), <headOf>(X, Y).
+? (X) :- -<Chair>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<Chair>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<Chair>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Chair>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Chair>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<Chair>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Chair>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<Chair>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<Chair>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<Chair>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<Chair>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Chair>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<headOf>(X, Z), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<headOf>(X, Z), <headOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<headOf>(X, Z), <member>(X, Y).
+? (X) :- -<headOf>(X, Z), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<headOf>(X, Z), <memberOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<headOf>(X, Z), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<Lecturer>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Lecturer>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<headOf>(X, Z), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(X, Z), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<headOf>(X, Z), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(X, Z), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(X, Z), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<headOf>(X, Z), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<headOf>(X, Z), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Chair>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<AssociateProfessor>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<subOrganizationOf>(Z, X), <headOf>(X, Y).
+? (X) :- -<Chair>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Chair>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<Chair>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Chair>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(X, Z), <Department>(X).
+? (X) :- -<AssociateProfessor>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(X, Z), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(X, Z), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(X, Z), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<headOf>(X, Z), <worksFor>(Y, X).
+? (X) :- -<Department>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<FullProfessor>(X), -<headOf>(Z, X), <Chair>(X).
+? (X) :- -<FullProfessor>(X), -<member>(X, Z), <Chair>(X).
+? (X) :- -<FullProfessor>(X), -<memberOf>(Z, X), <Chair>(X).
+? (X) :- -<FullProfessor>(X), -<worksFor>(Z, X), <Chair>(X).
+? (X) :- -<Department>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<FullProfessor>(X), <headOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<FullProfessor>(X), <member>(X, Y).
+? (X) :- -<FullProfessor>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<FullProfessor>(X), <memberOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<FullProfessor>(X), <worksFor>(Y, X).
+? (X) :- -<FullProfessor>(X), -<headOf>(Z, X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<member>(X, Z), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<memberOf>(Z, X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<worksFor>(Z, X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<FullProfessor>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<FullProfessor>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<FullProfessor>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<FullProfessor>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<FullProfessor>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <Chair>(X).
+? (X) :- -<AssistantProfessor>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<AssistantProfessor>(X), -<Department>(X), <headOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<AssistantProfessor>(X), -<Department>(X), <member>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<AssistantProfessor>(X), -<Department>(X), <memberOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<AssistantProfessor>(X), -<Department>(X), <worksFor>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<FullProfessor>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<AssistantProfessor>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<AssistantProfessor>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Lecturer>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Lecturer>(X), -<Publication>(X), <publicationAuthor>(X, Y).
+? (X) :- -<Publication>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<Publication>(X), <headOf>(X, Y).
+? (X) :- -<Chair>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Chair>(X), -<Publication>(X), <publicationAuthor>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<ResearchGroup>(X), <headOf>(X, Y).
+? (X) :- -<headOf>(X, Z), -<publicationAuthor>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<publicationAuthor>(X, Z), <headOf>(X, Y).
+? (X) :- -<headOf>(X, Z), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Publication>(X), -<headOf>(X, Z), <publicationAuthor>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<AssociateProfessor>(X), <headOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<AssociateProfessor>(X), <member>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<AssociateProfessor>(X), <memberOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<AssociateProfessor>(X), <worksFor>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Publication>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<ResearchGroup>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<FullProfessor>(X), -<publicationAuthor>(X, Z), <Chair>(X).
+? (X) :- -<AssociateProfessor>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<AssociateProfessor>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Publication>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Publication>(X), -<FullProfessor>(X), <publicationAuthor>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<publicationAuthor>(X, Z), <headOf>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<AssistantProfessor>(X), -<Publication>(X), <publicationAuthor>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<AssociateProfessor>(X), -<Publication>(X), <publicationAuthor>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<Professor>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Professor>(X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<advisor>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<advisor>(Z, X), <AssistantProfessor>(X).
+? (X) :- -<Professor>(X), -<AssociateProfessor>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Professor>(X), <AssociateProfessor>(X).
+? (X) :- -<Professor>(X), -<FullProfessor>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Professor>(X), <FullProfessor>(X).
+? (X) :- -<Professor>(X), -<headOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<Professor>(X), <headOf>(X, Y).
+? (X) :- -<Professor>(X), -<advisor>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<advisor>(Z, X), <Professor>(X).
+? (X) :- -<Chair>(X), -<Professor>(X), <advisor>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<advisor>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<advisor>(Z, X), <AssociateProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<advisor>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<advisor>(Z, X), <FullProfessor>(X).
+? (X) :- -<headOf>(X, Z), -<advisor>(Z, X), <Chair>(X).
+? (X) :- -<Chair>(X), -<advisor>(Z, X), <headOf>(X, Y).
+? (X) :- -<Professor>(X), -<AssociateProfessor>(X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<Professor>(X), <AssociateProfessor>(X).
+? (X) :- -<Professor>(X), -<FullProfessor>(X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<Professor>(X), <FullProfessor>(X).
+? (X) :- -<Professor>(X), -<headOf>(X, Z), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<Professor>(X), <headOf>(X, Y).
+? (X) :- -<Professor>(X), -<advisor>(Z, X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<advisor>(Z, X), <Professor>(X).
+? (X) :- -<AssistantProfessor>(X), -<Professor>(X), <advisor>(Y, X).
+? (X) :- -<AssociateProfessor>(X), -<advisor>(Z, X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<advisor>(Z, X), <AssociateProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<advisor>(Z, X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<advisor>(Z, X), <FullProfessor>(X).
+? (X) :- -<headOf>(X, Z), -<advisor>(Z, X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<advisor>(Z, X), <headOf>(X, Y).
+? (X) :- -<Professor>(X), -<FullProfessor>(X), <AssociateProfessor>(X).
+? (X) :- -<Professor>(X), -<AssociateProfessor>(X), <FullProfessor>(X).
+? (X) :- -<Professor>(X), -<headOf>(X, Z), <AssociateProfessor>(X).
+? (X) :- -<Professor>(X), -<AssociateProfessor>(X), <headOf>(X, Y).
+? (X) :- -<AssociateProfessor>(X), -<advisor>(Z, X), <Professor>(X).
+? (X) :- -<Professor>(X), -<advisor>(Z, X), <AssociateProfessor>(X).
+? (X) :- -<Professor>(X), -<AssociateProfessor>(X), <advisor>(Y, X).
+? (X) :- -<Professor>(X), -<headOf>(X, Z), <FullProfessor>(X).
+? (X) :- -<Professor>(X), -<FullProfessor>(X), <headOf>(X, Y).
+? (X) :- -<FullProfessor>(X), -<advisor>(Z, X), <Professor>(X).
+? (X) :- -<Professor>(X), -<advisor>(Z, X), <FullProfessor>(X).
+? (X) :- -<Professor>(X), -<FullProfessor>(X), <advisor>(Y, X).
+? (X) :- -<headOf>(X, Z), -<advisor>(Z, X), <Professor>(X).
+? (X) :- -<Professor>(X), -<advisor>(Z, X), <headOf>(X, Y).
+? (X) :- -<Professor>(X), -<headOf>(X, Z), <advisor>(Y, X).
+? (X) :- -<Publication>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<Publication>(X), <headOf>(Y, X).
+? (X) :- -<Publication>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<Publication>(X), <member>(X, Y).
+? (X) :- -<Department>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Department>(X), -<Publication>(X), <publicationAuthor>(X, Y).
+? (X) :- -<Publication>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<Publication>(X), <memberOf>(Y, X).
+? (X) :- -<Publication>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<Publication>(X), <worksFor>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(X, Z), <ResearchGroup>(X).
+? (X) :- -<Department>(X), -<ResearchGroup>(X), <subOrganizationOf>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<ResearchGroup>(X), <headOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<ResearchGroup>(X), <member>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<ResearchGroup>(X), <memberOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<ResearchGroup>(X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<headOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(X, Z), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<member>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(X, Z), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(X, Z), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<subOrganizationOf>(X, Z), <worksFor>(Y, X).
+? (X) :- -<headOf>(Z, X), -<publicationAuthor>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<publicationAuthor>(X, Z), <headOf>(Y, X).
+? (X) :- -<member>(X, Z), -<publicationAuthor>(X, Z), <Department>(X).
+? (X) :- -<Department>(X), -<publicationAuthor>(X, Z), <member>(X, Y).
+? (X) :- -<publicationAuthor>(X, Z), -<memberOf>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<publicationAuthor>(X, Z), <memberOf>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<worksFor>(Z, X), <Department>(X).
+? (X) :- -<Department>(X), -<publicationAuthor>(X, Z), <worksFor>(Y, X).
+? (X) :- -<FullProfessor>(X), -<advisor>(Z, X), <AssociateProfessor>(X).
+? (X) :- -<AssociateProfessor>(X), -<advisor>(Z, X), <FullProfessor>(X).
+? (X) :- -<headOf>(X, Z), -<advisor>(Z, X), <AssociateProfessor>(X).
+? (X) :- -<AssociateProfessor>(X), -<advisor>(Z, X), <headOf>(X, Y).
+? (X) :- -<Publication>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<Publication>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<headOf>(Z, X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Publication>(X), -<headOf>(Z, X), <publicationAuthor>(X, Y).
+? (X) :- -<Publication>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Publication>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Publication>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<Publication>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<member>(X, Z), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Publication>(X), -<member>(X, Z), <publicationAuthor>(X, Y).
+? (X) :- -<Publication>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<Publication>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<Publication>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<Publication>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<memberOf>(Z, X), <Publication>(X).
+? (X) :- -<Publication>(X), -<memberOf>(Z, X), <publicationAuthor>(X, Y).
+? (X) :- -<publicationAuthor>(X, Z), -<worksFor>(Z, X), <Publication>(X).
+? (X) :- -<Publication>(X), -<worksFor>(Z, X), <publicationAuthor>(X, Y).
+? (X) :- -<Publication>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Publication>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<headOf>(Z, X), <ResearchGroup>(X).
+? (X) :- -<ResearchGroup>(X), -<headOf>(Z, X), <subOrganizationOf>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(X, Z), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<member>(X, Z), <ResearchGroup>(X).
+? (X) :- -<ResearchGroup>(X), -<member>(X, Z), <subOrganizationOf>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(X, Z), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<memberOf>(Z, X), <ResearchGroup>(X).
+? (X) :- -<ResearchGroup>(X), -<memberOf>(Z, X), <subOrganizationOf>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(X, Z), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<worksFor>(Z, X), <ResearchGroup>(X).
+? (X) :- -<ResearchGroup>(X), -<worksFor>(Z, X), <subOrganizationOf>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(X, Z), <worksFor>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<headOf>(X, Z), -<advisor>(Z, X), <FullProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<advisor>(Z, X), <headOf>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<member>(X, Z), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<headOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<headOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<headOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<member>(X, Z), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<member>(X, Z), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<member>(X, Z), -<publicationAuthor>(X, Z), <headOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<publicationAuthor>(X, Z), <member>(X, Y).
+? (X) :- -<publicationAuthor>(X, Z), -<memberOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<publicationAuthor>(X, Z), <memberOf>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<worksFor>(Z, X), <headOf>(Y, X).
+? (X) :- -<headOf>(Z, X), -<publicationAuthor>(X, Z), <worksFor>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<memberOf>(Z, X), <member>(X, Y).
+? (X) :- -<member>(X, Z), -<publicationAuthor>(X, Z), <memberOf>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<worksFor>(Z, X), <member>(X, Y).
+? (X) :- -<member>(X, Z), -<publicationAuthor>(X, Z), <worksFor>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<worksFor>(Z, X), <memberOf>(Y, X).
+? (X) :- -<publicationAuthor>(X, Z), -<memberOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<Publication>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<subOrganizationOf>(X, Z), -<subOrganizationOf>(Z, X), <Department>(X).
+? (X) :- -<subOrganizationOf>(Z, X), -<publicationAuthor>(X, Z), <Department>(X).
+? (X) :- -<Publication>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<Publication>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Publication>(X), -<subOrganizationOf>(Z, X), <publicationAuthor>(X, Y).
+? (X) :- -<Publication>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<Publication>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<subOrganizationOf>(Z, X), <ResearchGroup>(X).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(Z, X), <subOrganizationOf>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<subOrganizationOf>(Z, X), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<subOrganizationOf>(Z, X), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(X, Z), -<subOrganizationOf>(Z, X), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(X, Z), -<subOrganizationOf>(Z, X), <worksFor>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<publicationAuthor>(X, Z), <headOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<publicationAuthor>(X, Z), <member>(X, Y).
+? (X) :- -<subOrganizationOf>(Z, X), -<publicationAuthor>(X, Z), <memberOf>(Y, X).
+? (X) :- -<subOrganizationOf>(Z, X), -<publicationAuthor>(X, Z), <worksFor>(Y, X).
+? (X) :- -<ResearchGroup>(X), -<publicationAuthor>(X, Z), <Publication>(X).
+? (X) :- -<Publication>(X), -<ResearchGroup>(X), <publicationAuthor>(X, Y).
+? (X) :- -<AssistantProfessor>(X), -<Faculty>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Faculty>(X), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<teacherOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<teacherOf>(X, Z), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<mastersDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<mastersDegreeFrom>(X, Z), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<doctoralDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<doctoralDegreeFrom>(X, Z), <AssistantProfessor>(X).
+? (X) :- -<AssistantProfessor>(X), -<worksFor>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<worksFor>(X, Z), <AssistantProfessor>(X).
+? (X) :- -<Professor>(X), -<Lecturer>(X), <Chair>(X).
+? (X) :- -<Professor>(X), -<Faculty>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Faculty>(X), <Professor>(X).
+? (X) :- -<Professor>(X), -<teacherOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<teacherOf>(X, Z), <Professor>(X).
+? (X) :- -<Professor>(X), -<mastersDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<mastersDegreeFrom>(X, Z), <Professor>(X).
+? (X) :- -<Professor>(X), -<doctoralDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<doctoralDegreeFrom>(X, Z), <Professor>(X).
+? (X) :- -<Professor>(X), -<worksFor>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<worksFor>(X, Z), <Professor>(X).
+? (X) :- -<AssociateProfessor>(X), -<Faculty>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Faculty>(X), <AssociateProfessor>(X).
+? (X) :- -<AssociateProfessor>(X), -<teacherOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<teacherOf>(X, Z), <AssociateProfessor>(X).
+? (X) :- -<AssociateProfessor>(X), -<mastersDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<mastersDegreeFrom>(X, Z), <AssociateProfessor>(X).
+? (X) :- -<AssociateProfessor>(X), -<doctoralDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<doctoralDegreeFrom>(X, Z), <AssociateProfessor>(X).
+? (X) :- -<AssociateProfessor>(X), -<worksFor>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<worksFor>(X, Z), <AssociateProfessor>(X).
+? (X) :- -<Lecturer>(X), -<Faculty>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Faculty>(X), <Lecturer>(X).
+? (X) :- -<Lecturer>(X), -<teacherOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<teacherOf>(X, Z), <Lecturer>(X).
+? (X) :- -<Lecturer>(X), -<mastersDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<mastersDegreeFrom>(X, Z), <Lecturer>(X).
+? (X) :- -<Lecturer>(X), -<advisor>(Z, X), <Chair>(X).
+? (X) :- -<Lecturer>(X), -<doctoralDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<doctoralDegreeFrom>(X, Z), <Lecturer>(X).
+? (X) :- -<Lecturer>(X), -<worksFor>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<worksFor>(X, Z), <Lecturer>(X).
+? (X) :- -<FullProfessor>(X), -<Faculty>(X), <Chair>(X).
+? (X) :- -<Chair>(X), -<Faculty>(X), <FullProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<teacherOf>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<teacherOf>(X, Z), <FullProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<mastersDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<mastersDegreeFrom>(X, Z), <FullProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<doctoralDegreeFrom>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<doctoralDegreeFrom>(X, Z), <FullProfessor>(X).
+? (X) :- -<FullProfessor>(X), -<worksFor>(X, Z), <Chair>(X).
+? (X) :- -<Chair>(X), -<worksFor>(X, Z), <FullProfessor>(X).
